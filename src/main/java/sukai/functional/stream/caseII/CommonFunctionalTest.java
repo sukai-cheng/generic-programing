@@ -1,4 +1,4 @@
-package sukai.functional.caseII;
+package sukai.functional.stream.caseII;
 
 import java.util.function.Consumer;
 

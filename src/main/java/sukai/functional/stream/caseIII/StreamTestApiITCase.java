@@ -1,4 +1,4 @@
-package sukai.functional.caseIII;
+package sukai.functional.stream.caseIII;
 
 import com.github.javafaker.Faker;
 import sukai.functional.utils.FakeUtil;

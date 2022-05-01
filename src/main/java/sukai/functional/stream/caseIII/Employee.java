@@ -1,4 +1,4 @@
-package sukai.functional.caseIII;
+package sukai.functional.stream.caseIII;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

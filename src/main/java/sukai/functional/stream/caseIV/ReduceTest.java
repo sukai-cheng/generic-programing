@@ -1,4 +1,4 @@
-package sukai.functional.caseIV;
+package sukai.functional.stream.caseIV;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;

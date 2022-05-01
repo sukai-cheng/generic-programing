@@ -1,4 +1,4 @@
-package sukai.functional.caseI;
+package sukai.functional.stream.caseI;
 
 /**
  * @description
