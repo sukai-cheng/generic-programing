@@ -1,4 +1,4 @@
-package sukai.desginpattern;
+package sukai.proxy;
 
 import org.apache.commons.lang3.StringUtils;
 

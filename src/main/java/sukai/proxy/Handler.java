@@ -1,4 +1,4 @@
-package sukai.desginpattern;
+package sukai.proxy;
 
 import org.springframework.beans.factory.InitializingBean;
 

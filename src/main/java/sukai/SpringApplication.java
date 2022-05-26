@@ -1,13 +1,9 @@
-package sukai.desginpattern;
+package sukai;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @description
- *
  * @author chengsukai
- *
- * @create 2022-04-17 22:28
  **/
 
 @SpringBootApplication
