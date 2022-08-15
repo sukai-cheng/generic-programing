@@ -15,12 +15,16 @@ public class _01_supplyAsync {
             SmallTool.printTimeAndThread("厨师炒菜");
             SmallTool.sleepMills(200);
             return "番茄炒蛋";
-            // 上一个任务的结果作为dish交给下一个任务执行
-        }).thenCompose(dish -> CompletableFuture.supplyAsync(() -> {
+        }).thenCombine(CompletableFuture.supplyAsync(() -> {
+            SmallTool.printTimeAndThread("服务员蒸饭");
+            SmallTool.sleepMills(100);
+            return "米饭";
+        }), (dish, rice) -> {
+            // 将两个异步任务的结果转化为一个值
             SmallTool.printTimeAndThread("服务员打饭");
             SmallTool.sleepMills(100);
-            return dish + "米饭";
-        }));
+            return String.format("%s + %s 好了", dish, rice);
+        });
 
         SmallTool.printTimeAndThread("小白在打王者");
         SmallTool.printTimeAndThread(String.format("%s,小白开吃", cf1.join()));
