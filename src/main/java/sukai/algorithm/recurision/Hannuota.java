@@ -1,4 +1,4 @@
-package sukai.algorithm;
+package sukai.algorithm.recurision;
 
 /**
  * @author chengsukai
