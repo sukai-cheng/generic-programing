@@ -1,4 +1,4 @@
-package sukai.currency.caseVI;
+package sukai.currency.caseV;
 
 import java.util.StringJoiner;
 
