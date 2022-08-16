@@ -3,7 +3,6 @@ package sukai.currency.caseVII;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sukai.currency.caseVI.SmallTool;
 
 /**
  * @author chengsukai
@@ -16,12 +15,12 @@ public class Dish {
     String name;
     Integer productionTime;
 
-    public void make() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    public long make() {
+        long startTime = System.currentTimeMillis();
+        long result = 0;
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+           result += i * i % 3;
         }
-        SmallTool.printTimeAndThread(this.name + "制作完毕，来吃我吧");
+        return System.currentTimeMillis() - startTime;
     }
 }
