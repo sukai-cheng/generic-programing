@@ -1,4 +1,4 @@
-package sukai.proxy;
+package sukai.proxy.caseI;
 
 import org.springframework.stereotype.Component;
 
