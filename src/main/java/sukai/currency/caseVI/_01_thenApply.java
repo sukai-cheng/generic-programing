@@ -15,6 +15,7 @@ public class _01_thenApply {
             SmallTool.printTimeAndThread("服务员收款 500元");
             SmallTool.sleepMills(100);
             return "500";
+            // 接收返回值
         }).thenApplyAsync(money -> {
             SmallTool.printTimeAndThread(String.format("服务员开发票 面额 %s元", money));
             SmallTool.sleepMills(200);
