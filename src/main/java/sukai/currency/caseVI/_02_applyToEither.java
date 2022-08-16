@@ -20,7 +20,17 @@ public class _02_applyToEither {
             SmallTool.sleepMills(200);
             return "800路到了";
             // 直接把先来的那人任务的结果返回
-        }), firstComeBus -> firstComeBus);
+        }), firstComeBus -> {
+            SmallTool.printTimeAndThread(firstComeBus);
+            if (firstComeBus.startsWith("700")) {
+                throw new RuntimeException("撞树了...");
+            }
+            return firstComeBus;
+        }).exceptionally(e -> {
+            SmallTool.printTimeAndThread(e.getMessage());
+            SmallTool.printTimeAndThread("小白叫出租车");
+            return "出租车 叫到了";
+        });
 
         SmallTool.printTimeAndThread(String.format("%s,小白坐车回家", bus.join()));
     }
