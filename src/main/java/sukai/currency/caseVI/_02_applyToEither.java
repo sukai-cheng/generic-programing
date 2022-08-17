@@ -1,5 +1,7 @@
 package sukai.currency.caseVI;
 
+import sukai.currency.caseV.SmallTool;
+
 import java.util.concurrent.CompletableFuture;
 
 /**

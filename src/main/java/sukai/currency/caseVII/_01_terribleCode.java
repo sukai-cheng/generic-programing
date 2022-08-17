@@ -1,6 +1,6 @@
 package sukai.currency.caseVII;
 
-import sukai.currency.caseVI.SmallTool;
+import sukai.currency.caseV.SmallTool;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;

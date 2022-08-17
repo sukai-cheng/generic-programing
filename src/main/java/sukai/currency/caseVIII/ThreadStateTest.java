@@ -1,7 +1,7 @@
 package sukai.currency.caseVIII;
 
 import lombok.extern.slf4j.Slf4j;
-import sukai.currency.caseVI.SmallTool;
+import sukai.currency.caseV.SmallTool;
 
 import java.util.concurrent.TimeUnit;
 

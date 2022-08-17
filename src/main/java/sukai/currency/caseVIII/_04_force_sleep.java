@@ -1,6 +1,6 @@
 package sukai.currency.caseVIII;
 
-import sukai.currency.caseVI.SmallTool;
+import sukai.currency.caseV.SmallTool;
 
 import java.util.concurrent.TimeUnit;
 
