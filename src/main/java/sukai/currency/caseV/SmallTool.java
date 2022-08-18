@@ -1,7 +1,6 @@
 package sukai.currency.caseV;
 
 import java.util.StringJoiner;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author chengsukai
@@ -11,8 +10,8 @@ public class SmallTool {
     public static void sleepMills(long mills) {
         try {
             // 线程sleep不会释放monitor锁
-//            Thread.sleep(mills);
-            TimeUnit.SECONDS.sleep(2);
+            Thread.sleep(mills);
+//            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
