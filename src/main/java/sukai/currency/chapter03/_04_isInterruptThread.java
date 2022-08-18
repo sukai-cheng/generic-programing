@@ -13,21 +13,19 @@ public class _04_isInterruptThread {
             @Override
             public void run() {
                 while (true) {
-                    try {
-                        // run方法中使用了sleep这个可中断方法，它会捕获到中断信号，并且会擦除interrupt标识
-                        TimeUnit.MILLISECONDS.sleep(10);
-                    } catch (InterruptedException e) {
+                    // run方法中使用了sleep这个可中断方法，它会捕获到中断信号，并且会擦除interrupt标识
+                    if (Thread.interrupted()) {
                         System.out.printf("I am be interrupted ? %s\n", isInterrupted());
                     }
                 }
             }
         };
-        thread.setDaemon(true);
+//        thread.setDaemon(true);
         thread.start();
         TimeUnit.MILLISECONDS.sleep(2);
-        System.out.printf("Thread is interrupted ? %s\n ", thread.isInterrupted());
+//        System.out.printf("Thread is interrupted ? %s\n ", thread.isInterrupted());
         thread.interrupt();
-        TimeUnit.MILLISECONDS.sleep(2);
-        System.out.printf("Thread is interrupted ? %s\n ", thread.isInterrupted());
+//        TimeUnit.MILLISECONDS.sleep(2);
+//        System.out.printf("Thread is interrupted ? %s\n ", thread.isInterrupted());
     }
 }
