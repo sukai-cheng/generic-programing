@@ -17,8 +17,14 @@ public class _07_interruptThreadExit {
 
                 SmallTool.printTimeAndThread("I will start work");
                 // 检查线程中断标识来决定是否退出的
-                while (!isInterrupted()) {
+                while (true) {
                     SmallTool.printTimeAndThread("Working");
+
+                    try {
+                        TimeUnit.SECONDS.sleep(1);
+                    } catch (InterruptedException e) {
+                        break;
+                    }
                 }
                 SmallTool.printTimeAndThread("I will be exiting");
 
