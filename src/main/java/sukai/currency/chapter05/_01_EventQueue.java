@@ -28,7 +28,7 @@ public class _01_EventQueue {
 
     public void offer(Event event) {
         synchronized (eventQueue) {
-            if (eventQueue.size() >= max) {
+            while (eventQueue.size() >= max) {
                 try {
                     SmallTool.printTimeAndThread("the queue is full.");
                     eventQueue.wait();// 线程执行了某个对象饿饿wait方法后，会加入与之对应的wait set中， 每一个对象的monitor都有一个与之关联的wait set
@@ -38,13 +38,13 @@ public class _01_EventQueue {
             }
             SmallTool.printTimeAndThread("the new event is submitted");
             eventQueue.addLast(event);
-            eventQueue.notify();
+            eventQueue.notifyAll();
         }
     }
 
     public Event take() {
         synchronized (eventQueue) {
-            if (eventQueue.isEmpty()) {
+            while (eventQueue.isEmpty()) {
                 try {
                     SmallTool.printTimeAndThread("the queue is empty.");
                     eventQueue.wait();
@@ -53,7 +53,7 @@ public class _01_EventQueue {
                 }
             }
             Event event = eventQueue.removeFirst();
-            this.eventQueue.notify();
+            this.eventQueue.notifyAll();
             SmallTool.printTimeAndThread("the event " + event + " is handled. ");
             return event;
         }
