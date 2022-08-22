@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import static java.util.concurrent.ThreadLocalRandom.current;
 import static java.lang.System.currentTimeMillis;
 import static java.lang.Thread.currentThread;
 
@@ -32,7 +30,7 @@ public class BooleanLock implements Lock {
                     if (!blockedList.contains(currentThread)) {
                         blockedList.add(currentThread);
                     }
-                    this.wait();
+                    this.wait();// 这样就可以解决synchronized锁不可中断的弊端了
                 } catch (InterruptedException e) {
                     blockedList.remove(tempThread);
                     throw e;
@@ -87,16 +85,4 @@ public class BooleanLock implements Lock {
         return Collections.unmodifiableList(blockedList);
     }
 
-    public void syncMethodTimeoutable() {
-        try {
-            this.lock(1000);
-            System.out.println(currentThread() + " get the lock.");
-            int randomInt = current().nextInt(10);
-            TimeUnit.SECONDS.sleep(randomInt);
-        } catch (InterruptedException | TimeoutException e) {
-            e.printStackTrace();
-        } finally {
-            this.unlock();
-        }
-    }
 }
