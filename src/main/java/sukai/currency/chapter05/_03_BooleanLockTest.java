@@ -1,7 +1,6 @@
 package sukai.currency.chapter05;
 
 import java.util.concurrent.TimeUnit;
-import java.util.stream.IntStream;
 
 import static java.lang.Thread.currentThread;
 import static java.util.concurrent.ThreadLocalRandom.current;
@@ -26,8 +25,13 @@ public class _03_BooleanLockTest {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         _03_BooleanLockTest blt = new _03_BooleanLockTest();
-        IntStream.range(0, 10).mapToObj(i -> new Thread(blt::syncMethod)).forEach(Thread::start);
+        new Thread(blt::syncMethod, "T1").start();
+        TimeUnit.MILLISECONDS.sleep(2);
+        Thread t2 = new Thread(blt::syncMethod, "T2");
+        t2.start();
+        TimeUnit.MILLISECONDS.sleep(10);
+        t2.interrupt();
     }
 }

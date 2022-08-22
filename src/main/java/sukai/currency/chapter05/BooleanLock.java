@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import static java.util.concurrent.ThreadLocalRandom.current;
 import static java.lang.System.currentTimeMillis;
 import static java.lang.Thread.currentThread;
 
@@ -25,10 +27,16 @@ public class BooleanLock implements Lock {
     public void lock() throws InterruptedException {
         synchronized (this) {
             while (locked) {
-                if (!blockedList.contains(currentThread)) {
-                    blockedList.add(currentThread);
+                final Thread tempThread = currentThread();
+                try {
+                    if (!blockedList.contains(currentThread)) {
+                        blockedList.add(currentThread);
+                    }
+                    this.wait();
+                } catch (InterruptedException e) {
+                    blockedList.remove(tempThread);
+                    throw e;
                 }
-                this.wait();
             }
             blockedList.remove(currentThread);
             this.locked = true;
@@ -77,5 +85,18 @@ public class BooleanLock implements Lock {
     @Override
     public List<Thread> getBlockedThreads() {
         return Collections.unmodifiableList(blockedList);
+    }
+
+    public void syncMethodTimeoutable() {
+        try {
+            this.lock(1000);
+            System.out.println(currentThread() + " get the lock.");
+            int randomInt = current().nextInt(10);
+            TimeUnit.SECONDS.sleep(randomInt);
+        } catch (InterruptedException | TimeoutException e) {
+            e.printStackTrace();
+        } finally {
+            this.unlock();
+        }
     }
 }
