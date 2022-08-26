@@ -6,24 +6,23 @@ package sukai.currency.chapter12;
  */
 public class EatNoodleThread extends Thread {
     private final String name;
-    private final Tableware leftTool;
-    private final Tableware rightTool;
 
-    public EatNoodleThread(String name, Tableware leftTool, Tableware rightTool) {
+    private TablewarePair tablewarePair;
+
+    public EatNoodleThread(String name, TablewarePair tablewarePair) {
         this.name = name;
-        this.leftTool = leftTool;
-        this.rightTool = rightTool;
+        this.tablewarePair = tablewarePair;
     }
 
     public void eat() {
-        synchronized (leftTool) {
-            System.out.println(name + " take up " + leftTool + "(left)");
-            synchronized (rightTool) {
-                System.out.println(name + " take up " + rightTool + "(right)");
+        synchronized (tablewarePair) {
+            System.out.println(name + " take up " + tablewarePair.getLeftTool() + "(left)");
+            synchronized (tablewarePair.getRightTool()) {
+                System.out.println(name + " take up " + tablewarePair.getRightTool() + "(right)");
                 System.out.println(name + " is eating now");
-                System.out.println(name + " put down " + rightTool + "(right)");
+                System.out.println(name + " put down " + tablewarePair.getRightTool() + "(right)");
             }
-            System.out.println(name + " put down " + leftTool + "(left)");
+            System.out.println(name + " put down " + tablewarePair.getLeftTool() + "(left)");
         }
     }
 
@@ -39,7 +38,8 @@ public class EatNoodleThread extends Thread {
     public static void main(String[] args) {
         Tableware fork = new Tableware("fork");
         Tableware knife = new Tableware("knife");
-        new EatNoodleThread("A", fork, knife).start();
-        new EatNoodleThread("B", knife, fork).start();
+        TablewarePair tools = new TablewarePair(fork, knife);
+        new EatNoodleThread("A", tools).start();
+        new EatNoodleThread("B", tools).start();
     }
 }
