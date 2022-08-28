@@ -1,4 +1,4 @@
-package sukai.currency.chapter17;
+package sukai.currency.chapter13;
 
 import static java.lang.Thread.currentThread;
 
