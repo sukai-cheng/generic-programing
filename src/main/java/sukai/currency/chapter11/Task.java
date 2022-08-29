@@ -5,6 +5,6 @@ package sukai.currency.chapter11;
  * @since 2022-08-26 11:14
  */
 @FunctionalInterface
-public interface Task<T> {
-    T call();
+public interface Task<IN,OUT> {
+    OUT get(IN input);
 }

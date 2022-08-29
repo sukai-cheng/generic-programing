@@ -14,6 +14,7 @@ public class OOMTest {
             cache.get(i);
             TimeUnit.MILLISECONDS.sleep(100);
             System.out.println("The " + i + " reference stored at cache.");
+            TimeUnit.SECONDS.sleep(2);
         }
     }
 }
