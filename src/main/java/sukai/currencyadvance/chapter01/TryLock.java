@@ -17,4 +17,13 @@ public class TryLock {
         }
         return result;
     }
+
+    public boolean release() {
+        if (threadLocal.get()) {
+            threadLocal.set(false);
+            return ab.compareAndSet(true, false);
+        } else {
+            return false;
+        }
+    }
 }
