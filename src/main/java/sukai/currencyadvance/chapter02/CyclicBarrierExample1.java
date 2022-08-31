@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toList;
  * @since 2022-08-31 10:03
  */
 public class CyclicBarrierExample1 {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, BrokenBarrierException {
 
         final int[] products = getProductsByCategoryId();
 
@@ -25,7 +25,7 @@ public class CyclicBarrierExample1 {
                 .collect(toList());
 
         final List<Thread> threadList = new ArrayList<>();
-        final CyclicBarrier barrier = new CyclicBarrier(list.size());
+        final CyclicBarrier barrier = new CyclicBarrier(list.size() + 1);
         list.forEach(pp -> {
             Thread thread = new Thread(() -> {
                 System.out.println(pp.getProdID() + "-> start calculate price.");
@@ -51,13 +51,7 @@ public class CyclicBarrierExample1 {
             threadList.add(thread);
             thread.start();
         });
-        threadList.forEach(t -> {
-            try {
-                t.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
+        barrier.await(); //等待其他线程运行结束并且到达barrier point，进而退出阻塞进入下一个运算逻辑
         System.out.println("all of prices calculate finished.");
         list.forEach(System.out::println);
 
