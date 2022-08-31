@@ -12,7 +12,6 @@ import static java.util.concurrent.ThreadLocalRandom.current;
 public class AtomicReferenceExample2 {
     // 创造AtomicReference对象并且赋初始值
     private static AtomicReference<DebitCard> debitCardRef = new AtomicReference<>(new DebitCard("Alex", 0));
-
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
             new Thread("T-" + i) {
