@@ -48,11 +48,13 @@ public class SemaphoreExample1 {
         }
 
         public boolean login() {
-            boolean login = semaphore.tryAcquire();
-            if (login) {
+            try {
+                semaphore.acquire();
                 System.out.println(currentThread() + " login success.");
+            } catch (InterruptedException e) {
+                return false;
             }
-            return login;
+            return true;
         }
 
         public void logout() {
