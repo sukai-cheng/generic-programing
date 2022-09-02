@@ -14,8 +14,8 @@ public class MonitorExample2 {
     private static RateLimiter rateLimiter = RateLimiter.create(0.5);
 
     public static void main(String[] args) {
-        for (; ; ) {
-            testRateLimiter();
+        for (int i = 0; i < 10; i++) {
+            new Thread(MonitorExample2::testRateLimiter).start();
         }
     }
 
