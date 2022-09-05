@@ -8,7 +8,8 @@ import java.util.concurrent.CompletableFuture;
  */
 public class ThenComposeExample {
     public static void main(String[] args) {
-        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> "Java").thenCompose(s -> CompletableFuture.supplyAsync(() -> s + " Scala"));
+        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> "Java")
+                .thenCombine(CompletableFuture.supplyAsync(() -> "Scala"), (s1, s2) -> s1 + s2);
         completableFuture.thenApply(String::toUpperCase).thenAccept(System.out::println);
     }
 }
