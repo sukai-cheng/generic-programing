@@ -15,14 +15,15 @@ public class CompletetableFutureExample {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executor = Executors.newFixedThreadPool(3);
-        CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture.supplyAsync(() -> {
             System.out.println("supplyAsync:" + currentThread());
             return "java";
             // 以同步的方式处理上一个异步任务的结果
-        }, executor).thenApply(e -> {
+        }, executor).thenApplyAsync(e -> {
             System.out.println("thenApply:" + currentThread());
             return e.length();
+        }).thenRun(()->{
+            System.out.println("All of task completed. " + currentThread());
         });
-        System.out.println(future.get()); //获取异步执行的结果
     }
 }
