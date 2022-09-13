@@ -21,6 +21,7 @@ public class MyInvocationHandler implements InvocationHandler {
 
         System.out.println("日志：调用了add方法，参数是" + Arrays.asList(args));
 
+        // 将被代理的对象放进去
         Object result = method.invoke(target, args);
 
         System.out.println("日志：" + result);
