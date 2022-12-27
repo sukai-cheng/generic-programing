@@ -1,7 +1,6 @@
-package sukai.selfannotation.caseV;
+package sukai.selfannotation.casev;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author chengsukai
@@ -15,7 +14,7 @@ public class SimpleContainer {
             T obj = cls.getDeclaredConstructor().newInstance();
             Field[] fields = cls.getDeclaredFields();
             for (Field f : fields) {
-                if (f.isAnnotationPresent(SimpleInject.class)) {
+                if (f.isAnnotationPresent(sukai.selfannotation.caseV.SimpleInject.class)) {
                     if (!f.canAccess(obj)) {
                         f.setAccessible(true);
                     }
