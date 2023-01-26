@@ -1,17 +1,12 @@
-package sukai;
+package com.rbac;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-/**
- * @author chengsukai
- **/
-
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class SpringApplication {
-
+public class RbacSpringBootApplication {
     public static void main(String[] args) {
-        org.springframework.boot.SpringApplication.run(SpringApplication.class, args);
+        SpringApplication.run(RbacSpringBootApplication.class, args);
     }
-
 }
