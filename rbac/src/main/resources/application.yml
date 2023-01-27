@@ -28,3 +28,29 @@ spring:
         connection-test-query: SELECT 1
         is-auto-commit: true
     type: com.zaxxer.hikari.HikariDataSource
+  jackson:
+    # 设置日期格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      # 格式化输出
+      indent-output: true
+      # 忽略无法转换的对象
+      fail-on-empty-beans: false
+      # 默认只序列话非空的属性
+    default-property-inclusion: non_empty
+    # 允许对象忽略json中不存在的属性
+    deserialization:
+      fail-on-unknown-properties: false
+    parser:
+      # 允许出现特殊字符和转义符
+      allow-unquoted-control-chars: true
+      # 允许出现单引号
+      allow-single-quotes: true
+mybatis-plus:
+  # 配置Mapper.xml映射文件
+  mapper-locations: classpath*:/mapper/rbac/**/*Mapper.xml
+  # 配置MyBatis数据返回类型别名（默认别名是类名）
+  type-aliases-package: com.rbac.entity
+  # 配置mybatis的sql语句输出到console
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

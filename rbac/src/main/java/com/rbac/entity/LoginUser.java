@@ -1,4 +1,4 @@
-package com.rbac.pojo;
+package com.rbac.entity;
 
 import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,12 +11,12 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class LoginUser implements UserDetails {
-    private User user;
+    private final SysUser user;
 
     // 存放当前登录用户的权限信息，一个用户可以有多个权限
-    private List<String> permissions;
+    private final List<String> permissions;
 
-    public LoginUser(User user, List<String> permissions) {
+    public LoginUser(SysUser user, List<String> permissions) {
         this.user = user;
         this.permissions = permissions;
     }

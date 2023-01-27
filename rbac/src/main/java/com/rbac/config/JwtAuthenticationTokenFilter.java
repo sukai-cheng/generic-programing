@@ -1,6 +1,6 @@
 package com.rbac.config;
 
-import com.rbac.pojo.LoginUser;
+import com.rbac.entity.LoginUser;
 import com.rbac.utils.JwtUtil;
 import com.rbac.utils.RedisCache;
 import io.jsonwebtoken.Claims;

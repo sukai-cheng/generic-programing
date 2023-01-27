@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rbac.mapper.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="com.rbac.entity.SysMenu">
+    <!--@mbg.generated-->
+    <!--@Table sys_menu-->
+    <id column="menu_id" jdbcType="BIGINT" property="menuId" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+    <result column="path" jdbcType="VARCHAR" property="path" />
+    <result column="component" jdbcType="VARCHAR" property="component" />
+    <result column="visible" jdbcType="CHAR" property="visible" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="perms" jdbcType="VARCHAR" property="perms" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="del_flag" jdbcType="CHAR" property="delFlag" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    menu_id, menu_name, "path", component, visible, "status", perms, icon, del_flag, 
+    remark
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update sys_menu
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="menu_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.menuName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;path&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.path,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="component = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.component,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="visible = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.visible,jdbcType=CHAR}
+        </foreach>
+      </trim>
+      <trim prefix="&quot;status&quot; = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.status,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="perms = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.perms,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="icon = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.icon,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="del_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.delFlag,jdbcType=CHAR}
+        </foreach>
+      </trim>
+      <trim prefix="remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when menu_id = #{item.menuId,jdbcType=BIGINT} then #{item.remark,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where menu_id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.menuId,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into sys_menu
+    (menu_id, menu_name, "path", component, visible, "status", perms, icon, del_flag, 
+      remark)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.menuId,jdbcType=BIGINT}, #{item.menuName,jdbcType=VARCHAR}, #{item.path,jdbcType=VARCHAR}, 
+        #{item.component,jdbcType=VARCHAR}, #{item.visible,jdbcType=CHAR}, #{item.status,jdbcType=VARCHAR}, 
+        #{item.perms,jdbcType=VARCHAR}, #{item.icon,jdbcType=VARCHAR}, #{item.delFlag,jdbcType=CHAR}, 
+        #{item.remark,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+</mapper>
