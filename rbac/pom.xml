@@ -8,13 +8,14 @@
     </parent>
     <artifactId>rbac</artifactId>
     <name>Archetype - rbac</name>
-    <url>http://maven.apache.org</url>
+    <url>https://maven.apache.org</url>
 
     <dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.0.2</version>
         </dependency>
 
         <!--JDBC-->
