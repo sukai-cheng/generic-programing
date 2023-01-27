@@ -6,10 +6,10 @@ import com.rbac.entity.SysUser;
 import com.rbac.mapper.SysUserMapper;
 import com.rbac.service.login.UserDetailsService;
 import com.rbac.utils.CodeEnum;
-import jakarta.annotation.Resource;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -19,6 +19,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Resource
     private SysUserMapper userMapper;
+
+    public void save(SysUser user){
+        userMapper.insert(user);
+    }
+
+    public void save(List<SysUser> users){
+        userMapper.batchInsert(users);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) {

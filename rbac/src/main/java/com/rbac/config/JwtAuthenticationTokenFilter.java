@@ -4,17 +4,17 @@ import com.rbac.entity.LoginUser;
 import com.rbac.utils.JwtUtil;
 import com.rbac.utils.RedisCache;
 import io.jsonwebtoken.Claims;
-import jakarta.annotation.Resource;
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import javax.annotation.Resource;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -27,7 +27,10 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-
+        if(request.getRequestURI().equals("/user/login")){
+            filterChain.doFilter(request,response);
+            return;
+        }
         String token = request.getHeader("token");
         if (StringUtils.hasText(token)) {
             filterChain.doFilter(request, response);

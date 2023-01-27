@@ -64,7 +64,7 @@ spring:
           max-wait: -1ms
 mybatis-plus:
   # 配置Mapper.xml映射文件
-  mapper-locations: classpath*:/mapper/rbac/**/*Mapper.xml
+  mapper-locations: classpath*:/mapper/rbac/*Mapper.xml
   # 配置MyBatis数据返回类型别名（默认别名是类名）
   type-aliases-package: com.rbac.entity
   # 配置mybatis的sql语句输出到console
