@@ -74,8 +74,8 @@ public class RedisCache {
     /**
      * 删除单个对象
      */
-    public Boolean deleteObject(final String key) {
-        return redisTemplate.delete(key);
+    public void deleteObject(final String key) {
+        redisTemplate.delete(key);
     }
 
     /**
@@ -173,9 +173,9 @@ public class RedisCache {
     /**
      * 删除Hash中的数据
      */
-    public void delCacheMapValue(final String key, final String hkey) {
+    public void delCacheMapValue(final String key, final String hashKey) {
         HashOperations hashOperations = redisTemplate.opsForHash();
-        hashOperations.delete(key, hkey);
+        hashOperations.delete(key, hashKey);
     }
 
     /**

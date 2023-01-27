@@ -26,19 +26,19 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException, ServletException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 
         String token = request.getHeader("token");
-        if(StringUtils.hasText(token)){
-            filterChain.doFilter(request,response);
+        if (StringUtils.hasText(token)) {
+            filterChain.doFilter(request, response);
             return;
         }
 
         String userId;
-        try{
+        try {
             Claims claims = JwtUtil.parseJWT(token);
             userId = claims.getSubject();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("token illegal");
         }

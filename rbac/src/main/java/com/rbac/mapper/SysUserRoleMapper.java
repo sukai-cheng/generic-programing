@@ -1,6 +1,5 @@
 package com.rbac.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.jeffreyning.mybatisplus.base.MppBaseMapper;
 import com.rbac.entity.SysUserRole;
 import java.util.List;

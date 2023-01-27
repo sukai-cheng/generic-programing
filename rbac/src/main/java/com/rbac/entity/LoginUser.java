@@ -1,5 +1,6 @@
 package com.rbac.entity;
 
+import lombok.Data;
 import net.minidev.json.annotate.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@Data
 public class LoginUser implements UserDetails {
     private final SysUser user;
 
