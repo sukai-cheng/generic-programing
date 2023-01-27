@@ -4,3 +4,27 @@ spring:
       name: cheng
       password: 123456
       roles: admin
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          url: jdbc:postgresql://localhost:5432/generic_programming
+          username: postgres
+          password: 123456
+          driver-class-name: org.postgresql.Driver
+        slave_1:
+          url: jdbc:postgresql://localhost:5432/generic_programming
+          username: postgres
+          password: 123456
+          driver-class-name: org.postgresql.Driver
+      hikari:
+        minimum-idle: 5
+        maximum-pool-size: 15
+        idle-timeout: 30000
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+        is-auto-commit: true
+    type: com.zaxxer.hikari.HikariDataSource
