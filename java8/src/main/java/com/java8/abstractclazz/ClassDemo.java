@@ -1,9 +1,19 @@
 package com.java8.abstractclazz;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class ClassDemo {
 
-    public static void main(String[] args) {
-        A a = new B();
+    public static void main(String[] args) throws ParseException {
+        Date date = new Date(1676044800000L);
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        sdf.setTimeZone(TimeZone.getDefault());
+        String dateStr2 = sdf.format(date);
+        System.out.println(dateStr2);
     }
 }
 

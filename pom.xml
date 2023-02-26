@@ -16,6 +16,7 @@
         <module>spring-boot-concurrency</module>
         <module>spring-boot-jpa</module>
         <module>system-design</module>
+        <module>tomcat</module>
     </modules>
 
     <properties>

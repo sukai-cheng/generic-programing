@@ -3,26 +3,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>generic-programing</artifactId>
+        <artifactId>spring-boot-concurrency</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-boot-concurrency</artifactId>
-    <packaging>pom</packaging>
-    <name>spring-boot-concurrency Maven Webapp</name>
-    <url>https://maven.apache.org</url>
-    <modules>
-        <module>kill-system</module>
-        <module>concurrency-basic</module>
-    </modules>
+    <artifactId>concurrency-basic</artifactId>
+    <packaging>war</packaging>
+    <name>concurrency-basic Maven Webapp</name>
+    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
-        <finalName>spring-boot-concurrency</finalName>
+        <finalName>concurrency-basic</finalName>
     </build>
 </project>
