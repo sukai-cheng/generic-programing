@@ -1,10 +1,10 @@
 package com.jpa.controller;
 
 import com.jpa.entity.User;
+import com.jpa.model.UserOnlyName;
 import com.jpa.repository.UserRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.jpa.utils.AjaxResult;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -17,7 +17,18 @@ public class UserController {
 
     @GetMapping("/save")
     public void addUser() {
-        userRepository.save(User.builder().email("test@gmail.com").lastName("chengsukai").build());
+        userRepository.save(User.builder()
+                .email("test@gmail.com")
+                .lastName("chengsukai")
+                .address("jiangsu/suzhou")
+                .sex("male")
+                .build());
+    }
+
+    @PostMapping("/findByName")
+    public AjaxResult findByName(@RequestBody String name) {
+        UserOnlyName res = userRepository.findByLastName(name);
+        return AjaxResult.success(res);
     }
 
 }

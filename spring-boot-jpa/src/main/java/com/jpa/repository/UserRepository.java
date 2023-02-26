@@ -1,14 +1,16 @@
 package com.jpa.repository;
 
 import com.jpa.entity.User;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.Repository;
+import com.jpa.model.UserOnlyName;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends CrudRepository<User, Long> {
-    List<User> findByLastName(String name);
+public interface UserRepository extends JpaRepository<User, Long> {
+    UserOnlyName findByLastName(String name);
 
     List<User> findByEmail(String email);
+
+
 
 }
