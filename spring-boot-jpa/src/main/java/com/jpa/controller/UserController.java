@@ -1,5 +1,6 @@
 package com.jpa.controller;
 
+import com.jpa.constants.Gender;
 import com.jpa.entity.User;
 import com.jpa.model.UserOnlyName;
 import com.jpa.repository.UserRepository;
@@ -21,7 +22,7 @@ public class UserController {
                 .email("test@gmail.com")
                 .lastName("chengsukai")
                 .address("jiangsu/suzhou")
-                .sex("male")
+                .gender(Gender.MAIL)
                 .build());
     }
 

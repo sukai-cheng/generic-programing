@@ -1,9 +1,12 @@
 package com.jpa.entity;
 
+import com.jpa.constants.Gender;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +16,9 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tbl_user")
-public class User {
+public class User implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 4315730587998916008L;
     @Id //这是一个主键
     @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
     private Long id;
@@ -23,8 +28,10 @@ public class User {
     private String firstName;
     @Column(name = "email",length = 255)
     private String email;
-    @Column(name = "sex")
-    private String sex;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_gender")
+    private Gender gender;
+
     @Column(name = "address")
     private String address;
     @Version
@@ -48,9 +55,11 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", email='" + email + '\'' +
-                ", sex='" + sex + '\'' +
+                ", gender=" + gender +
                 ", address='" + address + '\'' +
+                ", version=" + version +
                 '}';
     }
 }

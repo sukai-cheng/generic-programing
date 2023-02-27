@@ -1,5 +1,6 @@
 package com.jpa;
 
+import com.jpa.constants.Gender;
 import com.jpa.entity.User;
 import com.jpa.entity.UserExtend;
 import com.jpa.model.UserDto;
@@ -34,7 +35,7 @@ public class UserRepositoryQueryTest {
     @Rollback(value = false)
     public void testQueryAnnotation() {
 
-        userRepository.save(User.builder().firstName("simon").lastName("simon").email("simon@gmail.com").sex("man").address("shanghai").build());
+        userRepository.save(User.builder().firstName("simon").lastName("simon").email("simon@gmail.com").gender(Gender.MAIL).address("shanghai").build());
         UserOnlyName res = userRepository.findByLastName("simon");
 
         log.warn("userRepository..save..response:{}", JsonUtil.toJson(res));
@@ -65,7 +66,7 @@ public class UserRepositoryQueryTest {
     @Test
     @Rollback(value = false)
     public void testQueryAnnotationDto() {
-        userRepository.save(User.builder().firstName("jack").email("jack@gmail.com").sex("man").address("shanghai").build());
+        userRepository.save(User.builder().firstName("jack").email("jack@gmail.com").gender(Gender.MAIL).address("shanghai").build());
 
         userExtendRepository.save(UserExtend.builder().userId(1L).idCard("china bank").ages(18).studentNumber("jack001").build());
 
@@ -79,7 +80,7 @@ public class UserRepositoryQueryTest {
     @Test
     @Rollback(value = false)
     public void testQueryDynamicDto() {
-        userRepository.save(User.builder().firstName("Richard").email("richord@gmail.com").sex("man").address("suzhou").build());
+        userRepository.save(User.builder().firstName("Richard").email("richord@gmail.com").gender(Gender.MAIL).address("suzhou").build());
 
         UserOnlyName userDto = userRepository.findByUser("Richard", null);
         System.out.println(userDto.getFirstName() + " : " + userDto.getEmail());
