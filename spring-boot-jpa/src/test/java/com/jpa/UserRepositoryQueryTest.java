@@ -3,9 +3,12 @@ package com.jpa;
 import com.jpa.constants.Gender;
 import com.jpa.entity.User;
 import com.jpa.entity.UserExtend;
+import com.jpa.entity.UserInfo;
+import com.jpa.entity.UserInfoID;
 import com.jpa.model.UserDto;
 import com.jpa.model.UserOnlyName;
 import com.jpa.repository.UserExtendRepository;
+import com.jpa.repository.UserInfoRepository;
 import com.jpa.repository.UserRepository;
 import com.jpa.utils.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +23,7 @@ import org.springframework.test.annotation.Rollback;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @DataJpaTest
 @Slf4j
@@ -30,6 +34,9 @@ public class UserRepositoryQueryTest {
 
     @Resource
     private UserExtendRepository userExtendRepository;
+
+    @Resource
+    private UserInfoRepository userInfoRepository;
 
     @Test
     @Rollback(value = false)
@@ -87,6 +94,14 @@ public class UserRepositoryQueryTest {
 
         UserOnlyName res = userRepository.findByUser(null, "richord@gmail.com");
         System.out.println(res.getFirstName() + " : " + res.getEmail());
+    }
+
+    @Test
+    @Rollback(value = false)
+    public void testIdClass() {
+        userInfoRepository.save(UserInfo.builder().ages(1).name("jack").telephone("123456789").build());
+        Optional<UserInfo> userInfo = userInfoRepository.findById(UserInfoID.builder().name("jack").telephone("123456789").build());
+        System.out.println(userInfo.get());
     }
 
 
