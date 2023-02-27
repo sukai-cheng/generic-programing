@@ -9,5 +9,8 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+    properties:
+      hibernate:
+        dialect: com.jpa.dialect.PostgreSQL9DialectWithoutFK
 server:
   port: 8055

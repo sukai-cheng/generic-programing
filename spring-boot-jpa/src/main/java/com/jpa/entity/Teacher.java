@@ -15,6 +15,8 @@ public class Teacher {
     @Column
     private String name;
 
+    // mapperBy指定的是另一方实体里面属性字段
     @OneToMany(mappedBy = "teacher")
+//    @org.hibernate.annotations.ForeignKey(name = "none")
     private List<Student> students;
 }
