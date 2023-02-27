@@ -1,0 +1,11 @@
+//package com.jpa.repository;
+//
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+//import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+//
+//import java.io.Serializable;
+//
+//public interface IBaseRepository<T, PK extends Serializable> extends
+//        JpaRepository<T, PK>, JpaSpecificationExecutor<T>, QuerydslPredicateExecutor<T> {
+//}
