@@ -10,7 +10,6 @@ import java.util.Objects;
 @Getter
 @Setter
 @Builder
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tbl_user")
@@ -21,6 +20,9 @@ public class User {
 
     @Column(name = "last_name",length = 50) //这是和数据表对应的一个列
     private String lastName;
+
+    @Column(name = "first_name", length = 50)
+    private String firstName;
     @Column
     private String email;
 
@@ -41,5 +43,16 @@ public class User {
     @Override
     public int hashCode() {
         return getClass().hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
