@@ -1,6 +1,7 @@
 package com.jpa.model;
 
 public interface UserOnlyName {
-    String getLastName();
+    String getFirstName();
+
     String getEmail();
 }

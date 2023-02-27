@@ -16,21 +16,19 @@ import java.util.Objects;
 public class User {
     @Id //这是一个主键
     @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
-    private Integer id;
-
+    private Long id;
     @Column(name = "last_name",length = 50) //这是和数据表对应的一个列
     private String lastName;
-
     @Column(name = "first_name", length = 50)
     private String firstName;
-    @Column
+    @Column(name = "email",length = 255)
     private String email;
-
-    @Column
+    @Column(name = "sex")
     private String sex;
-
-    @Column
+    @Column(name = "address")
     private String address;
+    @Version
+    private Long version;
 
     @Override
     public boolean equals(Object o) {
