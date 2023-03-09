@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    username: postgres
+    password:
+    url: jdbc:log4jdbc:postgresql://localhost:5432/jpa
+    hikari: # springboot 2.0 整合了hikari ,据说这是目前性能最好的java数据库连接池
+      username: postgres
+      password:
+      minimum-idle: 5  # 最小空闲连接数量
+      idle-timeout: 180000 # 空闲连接存活最大时间，默认600000（10分钟）
+      maximum-pool-size: 10 # 连接池最大连接数,默认是10
+      auto-commit: true # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      pool-name: MyHikariCP # 连接池名称
+      max-lifetime: 1800000 # 此属性控制池中连接的最长生命周期,值0表示无限生命周期,默认1800000即30分钟
+      connection-timeout: 30000 # 数据库连接超时时间,默认30秒,即30000
+    #      connection-test-query: SELECT 1 #连接池每分配一条连接前执行的查询语句（如：SELECT 1），以验证该连接是否是有效的
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: com.kafka.dialect.PostgreSQL9DialectWithoutFK
+        format_sql: false
+  kafka:
+    # 指定 kafka 地址，我这里部署在的本地，直接就 localhost, 若外网地址，注意修改【PS: 集群部署需用逗号分隔】
+    bootstrap-servers: 192.168.46.81:9092
+    consumer:
+      # 指定 group_id
+      group-id: group_id
+      # 默认建议用 earliest, 设置该参数后 kafka出错后重启，找到未消费的offset可以继续消费。
+      auto-offset-reset: earliest
+      # 指定消息key和消息体的序列化方式
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      # 指定消息key和消息体的序列化方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
