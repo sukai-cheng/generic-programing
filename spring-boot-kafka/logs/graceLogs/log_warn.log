@@ -1,2 +1,5 @@
-2023-03-10 09:57:28.150 WARN  org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.kafka]' package. Please check your configuration.
-2023-03-10 15:03:14.718 WARN  org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.kafka]' package. Please check your configuration.
+2023-03-31 22:33:21.334 WARN  org.mybatis.spring.mapper.ClassPathMapperScanner Line:44  - No MyBatis mapper was found in '[com.kafka]' package. Please check your configuration.
+2023-03-31 22:33:33.983 WARN  org.apache.kafka.clients.NetworkClient Line:1063 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Bootstrap broker 192.168.46.81:9092 (id: -1 rack: null) disconnected
+2023-03-31 22:33:34.459 WARN  org.apache.kafka.clients.NetworkClient Line:1063 - [Producer clientId=producer-1] Bootstrap broker 192.168.46.81:9092 (id: -1 rack: null) disconnected
+2023-03-31 22:33:53.475 WARN  org.apache.kafka.clients.NetworkClient Line:1063 - [Producer clientId=producer-1] Bootstrap broker 192.168.46.81:9092 (id: -1 rack: null) disconnected
+2023-03-31 22:33:56.865 WARN  org.apache.kafka.clients.NetworkClient Line:1063 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Bootstrap broker 192.168.46.81:9092 (id: -1 rack: null) disconnected
