@@ -46,13 +46,13 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
         String mobile = loginVo.getMobile();
         String password = loginVo.getPassword();
 
-        if (StringUtils.isEmpty(password) || StringUtils.isEmpty(mobile)) {
-            return RespBean.error(ResBeanEnum.LOGIN_ERROR);
-        }
-
-        if (!ValidatorUtil.isMobile(mobile)) {
-            return RespBean.error(ResBeanEnum.MOBILE_ERROR);
-        }
+//        if (StringUtils.isEmpty(password) || StringUtils.isEmpty(mobile)) {
+//            return RespBean.error(ResBeanEnum.LOGIN_ERROR);
+//        }
+//
+//        if (!ValidatorUtil.isMobile(mobile)) {
+//            return RespBean.error(ResBeanEnum.MOBILE_ERROR);
+//        }
 
         TUser user = userMapper.selectById(mobile);
 
