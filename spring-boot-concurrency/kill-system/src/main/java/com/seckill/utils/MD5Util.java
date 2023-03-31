@@ -24,7 +24,7 @@ public class MD5Util {
 
     private static String inputPassword2ServerPass(String inputPass) {
         // 混淆
-        String str = salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);
+        String str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);
 
         // md5加密
         return md5(str);
@@ -37,16 +37,23 @@ public class MD5Util {
      */
     private static String serverPass2DataBasePass(String serverPass, String salt) {
 
-        String str = salt.charAt(0) + salt.charAt(2) + serverPass + salt.charAt(5) + salt.charAt(4);
+        String str = "" + salt.charAt(0) + salt.charAt(2) + serverPass + salt.charAt(5) + salt.charAt(4);
 
         return md5(str);
 
     }
 
-    public static String inputPass2DataBasePass(String inputPass, String salt){
+    public static String inputPass2DataBasePass(String inputPass, String salt) {
         String serverPass = inputPassword2ServerPass(inputPass);
         String dbPass = serverPass2DataBasePass(serverPass, salt);
         return dbPass;
+    }
+
+    public static void main(String[] args) {
+//        d3b1294a61a07da9b49b6e22b2cbd7f9
+//        b7797cce01b4b131b433b6acf4add449
+        System.out.println(inputPass2DataBasePass("123456","1a2b3c4d"));
+        System.out.println(serverPass2DataBasePass("d3b1294a61a07da9b49b6e22b2cbd7f9","1a2b3c4d"));
     }
 
 
