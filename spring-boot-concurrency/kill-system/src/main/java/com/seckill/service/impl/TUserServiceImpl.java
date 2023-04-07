@@ -1,5 +1,6 @@
 package com.seckill.service.impl;
 
+import com.seckill.exception.GlobalException;
 import com.seckill.utils.MD5Util;
 import com.seckill.utils.ValidatorUtil;
 import com.seckill.vo.LoginVo;
@@ -46,22 +47,14 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
         String mobile = loginVo.getMobile();
         String password = loginVo.getPassword();
 
-//        if (StringUtils.isEmpty(password) || StringUtils.isEmpty(mobile)) {
-//            return RespBean.error(ResBeanEnum.LOGIN_ERROR);
-//        }
-//
-//        if (!ValidatorUtil.isMobile(mobile)) {
-//            return RespBean.error(ResBeanEnum.MOBILE_ERROR);
-//        }
-
         TUser user = userMapper.selectById(mobile);
 
         if (null == user) {
-            return RespBean.error(ResBeanEnum.LOGIN_ERROR);
+            throw new GlobalException(ResBeanEnum.LOGIN_ERROR);
         }
 
         if (!MD5Util.inputPass2DataBasePass(password, user.getSalt()).equals(user.getPassword())) {
-            return RespBean.error(ResBeanEnum.LOGIN_ERROR);
+            throw new GlobalException(ResBeanEnum.LOGIN_ERROR);
         }
 
         return RespBean.success();
