@@ -9,6 +9,7 @@ import com.seckill.vo.LoginVo;
 import com.seckill.vo.ResBeanEnum;
 import com.seckill.vo.RespBean;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -30,6 +31,9 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
     @Resource
     private TUserMapper userMapper;
 
+    @Resource
+    private RedisTemplate redisTemplate;
+
     @Override
     public int updateBatch(List<TUser> list) {
         return baseMapper.updateBatch(list);
@@ -42,7 +46,6 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
     /**
      * 功能描述: 登陆
-     *
      */
     @Override
     public RespBean doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response) {
@@ -61,11 +64,28 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
         // 生成cookie
         String ticket = UUIDUtil.uuid();
         // 将用户对象存入cookie
-        request.getSession().setAttribute(ticket,user);
+        // request.getSession().setAttribute(ticket,user);
+
+        // 把用户对象放到redis中
+        redisTemplate.opsForValue().set("user:" + ticket, user);
         // 将UUID存入cookie中
-        CookieUtil.setCookie(request,response,"userTicket",ticket);
+        CookieUtil.setCookie(request, response, "userTicket", ticket);
         return RespBean.success();
 
+    }
+
+    @Override
+    public TUser getUserByCookie(HttpServletRequest request, HttpServletResponse response, String userTicket) {
+        if (StringUtils.isEmpty(userTicket)) {
+            return null;
+        }
+
+        TUser user = (TUser) redisTemplate.opsForValue().get("user:" + userTicket);
+
+        if (null != user) {
+            CookieUtil.setCookie(request, response, "userTicket", userTicket);
+        }
+        return user;
     }
 
 }

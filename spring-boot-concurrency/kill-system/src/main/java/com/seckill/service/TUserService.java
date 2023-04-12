@@ -17,4 +17,7 @@ public interface TUserService extends IService<TUser>{
     int batchInsert(List<TUser> list);
 
     RespBean doLogin(LoginVo loginVo, HttpServletRequest request, HttpServletResponse response);
+
+
+    TUser getUserByCookie(HttpServletRequest request, HttpServletResponse response, String userTicket);
 }
