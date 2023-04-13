@@ -13,4 +13,6 @@ public interface TGoodsMapper extends BaseMapper<TGoods> {
     int batchInsert(@Param("list") List<TGoods> list);
 
     List<GoodsVo> findGoodsVo();
+
+    GoodsVo findGoodsVoByGoodsId(Long goodsId);
 }
