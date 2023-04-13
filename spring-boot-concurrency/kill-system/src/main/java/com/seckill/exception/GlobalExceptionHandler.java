@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 
-@RestControllerAdvice
+@RestControllerAdvice // 只能处理控制器抛出的异常, 此时请求已经进入控制器中
 public class GlobalExceptionHandler {
+
+    // 分类处理异常
     @ExceptionHandler(Exception.class)
     public RespBean ExceptionHandler(Exception e) {
         if (e instanceof GlobalException) {
