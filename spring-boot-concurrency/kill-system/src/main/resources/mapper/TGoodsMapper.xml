@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seckill.mapper.TGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.seckill.pojo.TGoods">
+    <!--@mbg.generated-->
+    <!--@Table t_goods-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_title" jdbcType="VARCHAR" property="goodsTitle" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+    <result column="goods_detail" jdbcType="LONGVARCHAR" property="goodsDetail" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="goods_stock" jdbcType="INTEGER" property="goodsStock" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, goods_name, goods_title, goods_img, goods_detail, goods_price, goods_stock
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update t_goods
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="goods_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="goods_title = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsTitle,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="goods_img = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsImg,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="goods_detail = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsDetail,jdbcType=LONGVARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="goods_price = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsPrice,jdbcType=DECIMAL}
+        </foreach>
+      </trim>
+      <trim prefix="goods_stock = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.goodsStock,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_goods
+    (goods_name, goods_title, goods_img, goods_detail, goods_price, goods_stock)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.goodsName,jdbcType=VARCHAR}, #{item.goodsTitle,jdbcType=VARCHAR}, #{item.goodsImg,jdbcType=VARCHAR}, 
+        #{item.goodsDetail,jdbcType=LONGVARCHAR}, #{item.goodsPrice,jdbcType=DECIMAL}, 
+        #{item.goodsStock,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+</mapper>
