@@ -32,7 +32,7 @@ spring:
         # 最小空闲连接
         min-idle: 5
 mybatis-plus:
-  mapper-locations: classpath:*:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.seckill.pojo
 
 # MyBatis SQL打印
