@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 @Controller
-@RequestMapping("/secKill")
+@RequestMapping("/seckill")
 public class SecKillController {
 
     @Resource
@@ -28,7 +28,7 @@ public class SecKillController {
     @Resource
     private TOrderService orderService;
 
-    @RequestMapping("/doSecKill")
+    @RequestMapping("/doSeckill")
     public String doSeckill(Model model, TUser user, Long goodsId) {
 
         if (user == null) {

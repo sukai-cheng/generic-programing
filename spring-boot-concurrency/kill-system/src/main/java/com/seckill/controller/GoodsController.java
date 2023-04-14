@@ -1,9 +1,7 @@
 package com.seckill.controller;
 
-import com.seckill.pojo.TGoods;
 import com.seckill.pojo.TUser;
 import com.seckill.service.TGoodsService;
-import com.seckill.service.TUserService;
 import com.seckill.vo.GoodsVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +14,6 @@ import java.util.Date;
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
-
-    @Resource
-    TUserService userService;
 
     @Resource
     TGoodsService goodsService;
@@ -42,13 +37,13 @@ public class GoodsController {
         return "goodsList";
     }
 
-    @RequestMapping("toDetail/{goodsId}")
+    @RequestMapping("/detail/{goodsId}")
     public String toDetail(Model model, TUser user, @PathVariable Long goodsId) {
         model.addAttribute("user", user);
         GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
         Date startDate = goods.getStartDate();
         Date endDate = goods.getEndDate();
-        int remainSeconds = 0;
+        int remainSeconds;
         Date nowDate = new Date();
         int secKillStatus = 0;
         // 秒杀还未开始
@@ -60,6 +55,8 @@ public class GoodsController {
             remainSeconds = -1;
         } else {
             secKillStatus = 1;
+            remainSeconds = 0;
+//            remainSeconds = 10;
         }
         model.addAttribute("secKillStatus", secKillStatus);
         model.addAttribute("remainSeconds", remainSeconds);

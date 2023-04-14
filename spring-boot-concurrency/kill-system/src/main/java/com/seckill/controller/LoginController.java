@@ -34,8 +34,6 @@ public class LoginController {
 
     /**
      * 登陆功能
-     * @param loginVo
-     * @return
      */
     @RequestMapping("doLogin")
     @ResponseBody
