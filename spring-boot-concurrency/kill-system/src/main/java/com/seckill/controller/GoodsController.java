@@ -20,6 +20,7 @@ public class GoodsController {
 
     /**
      * 跳转到商品列表页面
+     * QPS: 1861.5/sec
      */
     @RequestMapping("/toList")
     public String toList(Model model, TUser user) {
