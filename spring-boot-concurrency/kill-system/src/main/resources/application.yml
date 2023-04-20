@@ -18,7 +18,7 @@ spring:
       connection-test-query: SELECT 1
   redis:
     host: localhost
-    port: 6389
+    port: 6379
     database: 0
     connect-timeout: 10000ms
     lettuce:
