@@ -1,6 +1,7 @@
 package com.seckill.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.seckill.mapper.TOrderMapper;
 import com.seckill.pojo.TOrder;
@@ -40,6 +41,8 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
     public TOrder seckill(TUser user, GoodsVo goodsVo) {
         TSeckillGoods seckillGoods = seckillGoodsService.getOne(new QueryWrapper<TSeckillGoods>().eq("goods_id", goodsVo.getId()));
         seckillGoods.setStockCount(seckillGoods.getStockCount() - 1);
+        seckillGoodsService.update(new UpdateWrapper<TSeckillGoods>().set("stock_count", seckillGoods.getStockCount()).eq("id", seckillGoods.getId()).gt("stock_count", 0));
+
         seckillGoodsService.updateById(seckillGoods);
 
         TOrder order = new TOrder();
