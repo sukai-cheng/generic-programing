@@ -22,7 +22,7 @@ public class MD5Util {
 
     private static final String salt = "1a2b3c4d";
 
-    private static String inputPassword2ServerPass(String inputPass) {
+    static String inputPassword2ServerPass(String inputPass) {
         // 混淆
         String str = "" + salt.charAt(0) + salt.charAt(2) + inputPass + salt.charAt(5) + salt.charAt(4);
 

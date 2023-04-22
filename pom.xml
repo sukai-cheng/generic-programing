@@ -18,6 +18,7 @@
         <module>system-design</module>
         <module>tomcat</module>
         <module>spring-boot-kafka</module>
+        <module>spring-boot-easyexcel</module>
     </modules>
 
     <properties>
