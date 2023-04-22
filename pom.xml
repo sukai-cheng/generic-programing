@@ -19,6 +19,7 @@
         <module>tomcat</module>
         <module>spring-boot-kafka</module>
         <module>spring-boot-easyexcel</module>
+        <module>springboot-rabbitmq</module>
     </modules>
 
     <properties>

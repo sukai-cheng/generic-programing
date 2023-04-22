@@ -1,25 +1,24 @@
-2023-03-31 22:33:20.674 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:305 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SpringBootKafkaApplicationTests], using SpringBootContextLoader
-2023-03-31 22:33:20.677 INFO  org.springframework.test.context.support.AbstractContextLoader Line:264 - Could not detect default resource locations for test class [SpringBootKafkaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-03-31 22:33:20.745 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:245 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
-2023-03-31 22:33:20.753 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:174 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64ba3208, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@158a3b2e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@25a6944c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e1fa5b1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b00f608, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f17e30d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e821657, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1d131e1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@71cf1b07, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@615091b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4fce136b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4aa83f4f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@43b6123e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@260e86a1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@19648c40]
-2023-03-31 22:33:20.911 INFO  SpringBootKafkaApplicationTests Line:55  - Starting SpringBootKafkaApplicationTests using Java 17.0.6 on chengsukaideMacBook-Pro.local with PID 5117 (started by chengsukai in /Users/chengsukai/Desktop/workspace/study/generic-programing/spring-boot-kafka)
-2023-03-31 22:33:20.912 INFO  SpringBootKafkaApplicationTests Line:631 - No active profile set, falling back to 1 default profile: "default"
-2023-03-31 22:33:20.915 INFO  org.hibernate.validator.internal.util.Version Line:21  - HV000001: Hibernate Validator 6.2.5.Final
-2023-03-31 22:33:21.248 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
-2023-03-31 22:33:21.249 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-03-31 22:33:21.259 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2023-03-31 22:33:21.266 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
-2023-03-31 22:33:21.267 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-03-31 22:33:21.272 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2023-03-31 22:33:21.619 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-03-31 22:33:21.648 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-03-31 22:33:21.728 INFO  org.hibernate.annotations.common.Version Line:56  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-03-31 22:33:21.780 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - MyHikariCP - Starting...
-2023-03-31 22:33:21.830 INFO  com.zaxxer.hikari.HikariDataSource Line:123 - MyHikariCP - Start completed.
-2023-03-31 22:33:21.839 INFO  org.hibernate.dialect.Dialect Line:175 - HHH000400: Using dialect: com.kafka.dialect.PostgreSQL9DialectWithoutFK
-2023-03-31 22:33:21.925 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:52  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-03-31 22:33:21.929 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-03-31 22:33:22.666 INFO  org.apache.kafka.clients.consumer.ConsumerConfig Line:376 - ConsumerConfig values: 
+2023-04-22 23:20:32.825 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:305 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SpringBootKafkaApplicationTests], using SpringBootContextLoader
+2023-04-22 23:20:32.828 INFO  org.springframework.test.context.support.AbstractContextLoader Line:264 - Could not detect default resource locations for test class [SpringBootKafkaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-04-22 23:20:32.894 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:245 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
+2023-04-22 23:20:32.900 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:174 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64ba3208, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@158a3b2e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@25a6944c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e1fa5b1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b00f608, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f17e30d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e821657, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1d131e1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@71cf1b07, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@615091b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4fce136b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4aa83f4f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@43b6123e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@260e86a1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@19648c40]
+2023-04-22 23:20:33.048 INFO  SpringBootKafkaApplicationTests Line:55  - Starting SpringBootKafkaApplicationTests using Java 17.0.7 on chengsukaideMacBook-Pro.local with PID 52162 (started by chengsukai in /Users/chengsukai/Desktop/workspace/study/generic-programing/spring-boot-kafka)
+2023-04-22 23:20:33.048 INFO  SpringBootKafkaApplicationTests Line:631 - No active profile set, falling back to 1 default profile: "default"
+2023-04-22 23:20:33.049 INFO  org.hibernate.validator.internal.util.Version Line:21  - HV000001: Hibernate Validator 6.2.5.Final
+2023-04-22 23:20:33.381 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-04-22 23:20:33.382 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-22 23:20:33.390 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-04-22 23:20:33.397 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-04-22 23:20:33.398 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-04-22 23:20:33.402 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+2023-04-22 23:20:33.737 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-22 23:20:33.771 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-04-22 23:20:33.833 INFO  org.hibernate.annotations.common.Version Line:56  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-22 23:20:33.881 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - MyHikariCP - Starting...
+2023-04-22 23:20:34.977 INFO  org.hibernate.dialect.Dialect Line:175 - HHH000400: Using dialect: com.kafka.dialect.PostgreSQL9DialectWithoutFK
+2023-04-22 23:20:35.064 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:52  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-22 23:20:35.069 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-22 23:20:35.752 INFO  org.apache.kafka.clients.consumer.ConsumerConfig Line:376 - ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.offset.reset = earliest
@@ -112,12 +111,12 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
 
-2023-03-31 22:33:22.735 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
-2023-03-31 22:33:22.736 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
-2023-03-31 22:33:22.736 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1680273202734
-2023-03-31 22:33:22.737 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:966 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Subscribed to topic(s): kafka
-2023-03-31 22:33:22.749 INFO  SpringBootKafkaApplicationTests Line:61  - Started SpringBootKafkaApplicationTests in 1.977 seconds (JVM running for 2.445)
-2023-03-31 22:33:22.930 INFO  org.apache.kafka.clients.producer.ProducerConfig Line:376 - ProducerConfig values: 
+2023-04-22 23:20:35.819 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
+2023-04-22 23:20:35.820 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
+2023-04-22 23:20:35.820 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1682176835819
+2023-04-22 23:20:35.821 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:966 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Subscribed to topic(s): kafka
+2023-04-22 23:20:35.832 INFO  SpringBootKafkaApplicationTests Line:61  - Started SpringBootKafkaApplicationTests in 2.915 seconds (JVM running for 3.366)
+2023-04-22 23:20:36.054 INFO  org.apache.kafka.clients.producer.ProducerConfig Line:376 - ProducerConfig values: 
 	acks = -1
 	batch.size = 16384
 	bootstrap.servers = [192.168.46.81:9092]
@@ -203,260 +202,29 @@
 	transactional.id = null
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-2023-03-31 22:33:22.936 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:572 - [Producer clientId=producer-1] Instantiated an idempotent producer.
-2023-03-31 22:33:22.943 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
-2023-03-31 22:33:22.943 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
-2023-03-31 22:33:22.944 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1680273202943
-2023-03-31 22:33:33.981 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 11196 ms.
-2023-03-31 22:33:34.459 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 11485 ms.
-2023-03-31 22:33:53.473 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 18871 ms.
-2023-03-31 22:33:56.863 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 22775 ms.
-2023-03-31 22:34:22.977 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
-2023-03-31 22:34:22.977 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
-2023-03-31 22:34:22.977 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:1075 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
-2023-03-31 22:34:22.978 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
-2023-03-31 22:34:22.978 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
-2023-03-31 22:34:22.978 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
-2023-03-31 22:34:22.978 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2023-03-31 22:34:22.978 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
-2023-03-31 22:34:22.980 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.consumer for consumer-group_id-1 unregistered
-2023-03-31 22:34:22.980 INFO  org.springframework.kafka.listener.KafkaMessageListenerContainer Line:292 - group_id: Consumer stopped
-2023-03-31 22:34:22.988 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:1249 - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
-2023-03-31 22:34:23.739 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
-2023-03-31 22:34:23.739 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2023-03-31 22:34:23.739 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
-2023-03-31 22:34:23.739 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.producer for producer-1 unregistered
-2023-03-31 22:34:23.740 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-03-31 22:34:23.742 INFO  com.zaxxer.hikari.HikariDataSource Line:350 - MyHikariCP - Shutdown initiated...
-2023-03-31 22:34:23.744 INFO  com.zaxxer.hikari.HikariDataSource Line:352 - MyHikariCP - Shutdown completed.
-2023-03-31 23:10:53.534 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:305 - Neither @ContextConfiguration nor @ContextHierarchy found for test class [SpringBootKafkaApplicationTests], using SpringBootContextLoader
-2023-03-31 23:10:53.538 INFO  org.springframework.test.context.support.AbstractContextLoader Line:264 - Could not detect default resource locations for test class [SpringBootKafkaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-03-31 23:10:53.607 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:245 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener]
-2023-03-31 23:10:53.615 INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper Line:174 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64ba3208, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@158a3b2e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@25a6944c, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5e1fa5b1, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b00f608, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f17e30d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3e821657, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1d131e1b, org.springframework.test.context.event.EventPublishingTestExecutionListener@71cf1b07, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@615091b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4fce136b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4aa83f4f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@43b6123e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@260e86a1, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@19648c40]
-2023-03-31 23:10:53.771 INFO  SpringBootKafkaApplicationTests Line:55  - Starting SpringBootKafkaApplicationTests using Java 17.0.6 on chengsukaideMacBook-Pro.local with PID 8886 (started by chengsukai in /Users/chengsukai/Desktop/workspace/study/generic-programing/spring-boot-kafka)
-2023-03-31 23:10:53.772 INFO  SpringBootKafkaApplicationTests Line:631 - No active profile set, falling back to 1 default profile: "default"
-2023-03-31 23:10:53.775 INFO  org.hibernate.validator.internal.util.Version Line:21  - HV000001: Hibernate Validator 6.2.5.Final
-2023-03-31 23:10:54.103 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
-2023-03-31 23:10:54.104 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-03-31 23:10:54.114 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2023-03-31 23:10:54.123 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:262 - Multiple Spring Data modules found, entering strict repository configuration mode
-2023-03-31 23:10:54.124 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:132 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-03-31 23:10:54.130 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate Line:201 - Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
-2023-03-31 23:10:54.561 INFO  org.hibernate.jpa.internal.util.LogHelper Line:31  - HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-03-31 23:10:54.591 INFO  org.hibernate.Version Line:44  - HHH000412: Hibernate ORM core version 5.6.14.Final
-2023-03-31 23:10:54.669 INFO  org.hibernate.annotations.common.Version Line:56  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-03-31 23:10:54.722 INFO  com.zaxxer.hikari.HikariDataSource Line:110 - MyHikariCP - Starting...
-2023-03-31 23:10:54.772 INFO  com.zaxxer.hikari.HikariDataSource Line:123 - MyHikariCP - Start completed.
-2023-03-31 23:10:54.781 INFO  org.hibernate.dialect.Dialect Line:175 - HHH000400: Using dialect: com.kafka.dialect.PostgreSQL9DialectWithoutFK
-2023-03-31 23:10:54.865 INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator Line:52  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-03-31 23:10:54.869 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-03-31 23:10:55.600 INFO  org.apache.kafka.clients.consumer.ConsumerConfig Line:376 - ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.offset.reset = earliest
-	bootstrap.servers = [192.168.46.81:9092]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-group_id-1
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = group_id
-	group.instance.id = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-
-2023-03-31 23:10:55.666 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
-2023-03-31 23:10:55.666 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
-2023-03-31 23:10:55.666 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1680275455665
-2023-03-31 23:10:55.668 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:966 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Subscribed to topic(s): kafka
-2023-03-31 23:10:55.680 INFO  SpringBootKafkaApplicationTests Line:61  - Started SpringBootKafkaApplicationTests in 2.046 seconds (JVM running for 2.512)
-2023-03-31 23:10:55.875 INFO  org.apache.kafka.clients.producer.ProducerConfig Line:376 - ProducerConfig values: 
-	acks = -1
-	batch.size = 16384
-	bootstrap.servers = [192.168.46.81:9092]
-	buffer.memory = 33554432
-	client.dns.lookup = use_all_dns_ips
-	client.id = producer-1
-	compression.type = none
-	connections.max.idle.ms = 540000
-	delivery.timeout.ms = 120000
-	enable.idempotence = true
-	interceptor.classes = []
-	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
-	linger.ms = 0
-	max.block.ms = 60000
-	max.in.flight.requests.per.connection = 5
-	max.request.size = 1048576
-	metadata.max.age.ms = 300000
-	metadata.max.idle.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
-	receive.buffer.bytes = 32768
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	transaction.timeout.ms = 60000
-	transactional.id = null
-	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
-
-2023-03-31 23:10:55.882 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:572 - [Producer clientId=producer-1] Instantiated an idempotent producer.
-2023-03-31 23:10:55.889 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
-2023-03-31 23:10:55.890 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
-2023-03-31 23:10:55.890 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1680275455889
-2023-03-31 23:11:05.138 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 9423 ms.
-2023-03-31 23:11:06.076 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 10146 ms.
-2023-03-31 23:11:27.845 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 21630 ms.
-2023-03-31 23:11:28.722 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 23434 ms.
-2023-03-31 23:11:55.953 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
-2023-03-31 23:11:55.954 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
-2023-03-31 23:11:55.954 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:1075 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
-2023-03-31 23:11:55.954 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
-2023-03-31 23:11:55.954 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
-2023-03-31 23:11:55.954 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
-2023-03-31 23:11:55.955 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2023-03-31 23:11:55.955 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
-2023-03-31 23:11:55.957 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.consumer for consumer-group_id-1 unregistered
-2023-03-31 23:11:55.957 INFO  org.springframework.kafka.listener.KafkaMessageListenerContainer Line:292 - group_id: Consumer stopped
-2023-03-31 23:11:55.966 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:1249 - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
-2023-03-31 23:11:58.065 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
-2023-03-31 23:11:58.066 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2023-03-31 23:11:58.066 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
-2023-03-31 23:11:58.067 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.producer for producer-1 unregistered
-2023-03-31 23:11:58.068 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-03-31 23:11:58.071 INFO  com.zaxxer.hikari.HikariDataSource Line:350 - MyHikariCP - Shutdown initiated...
-2023-03-31 23:11:58.074 INFO  com.zaxxer.hikari.HikariDataSource Line:352 - MyHikariCP - Shutdown completed.
+2023-04-22 23:20:36.068 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:572 - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-04-22 23:20:36.076 INFO  org.apache.kafka.common.utils.AppInfoParser Line:119 - Kafka version: 3.1.2
+2023-04-22 23:20:36.076 INFO  org.apache.kafka.common.utils.AppInfoParser Line:120 - Kafka commitId: f8c67dc3ae0a3265
+2023-04-22 23:20:36.076 INFO  org.apache.kafka.common.utils.AppInfoParser Line:121 - Kafka startTimeMs: 1682176836076
+2023-04-22 23:20:46.175 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 10061 ms.
+2023-04-22 23:20:46.344 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 10501 ms.
+2023-04-22 23:21:06.256 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 19779 ms.
+2023-04-22 23:21:09.160 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 22845 ms.
+2023-04-22 23:21:33.366 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 24094 ms.
+2023-04-22 23:21:36.124 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
+2023-04-22 23:21:36.124 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-04-22 23:21:36.124 INFO  org.apache.kafka.clients.consumer.KafkaConsumer Line:1075 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-04-22 23:21:36.125 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:972 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Resetting generation due to: consumer pro-actively leaving the group
+2023-04-22 23:21:36.125 INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator Line:1000 - [Consumer clientId=consumer-group_id-1, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-04-22 23:21:36.125 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
+2023-04-22 23:21:36.125 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-04-22 23:21:36.125 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
+2023-04-22 23:21:36.127 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.consumer for consumer-group_id-1 unregistered
+2023-04-22 23:21:36.127 INFO  org.springframework.kafka.listener.KafkaMessageListenerContainer Line:292 - group_id: Consumer stopped
+2023-04-22 23:21:36.135 INFO  org.apache.kafka.clients.producer.KafkaProducer Line:1249 - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2023-04-22 23:21:58.414 INFO  org.apache.kafka.clients.NetworkClient Line:819 - [Producer clientId=producer-1] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 24801 ms.
+2023-04-22 23:21:58.530 INFO  org.apache.kafka.common.metrics.Metrics Line:659 - Metrics scheduler closed
+2023-04-22 23:21:58.530 INFO  org.apache.kafka.common.metrics.Metrics Line:663 - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-04-22 23:21:58.530 INFO  org.apache.kafka.common.metrics.Metrics Line:669 - Metrics reporters closed
+2023-04-22 23:21:58.530 INFO  org.apache.kafka.common.utils.AppInfoParser Line:83  - App info kafka.producer for producer-1 unregistered
+2023-04-22 23:21:58.532 INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean Line:651 - Closing JPA EntityManagerFactory for persistence unit 'default'

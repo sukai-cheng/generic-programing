@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
-@SpringBootApplication
+@SpringBootApplication()
 public class JpaSpringBootApplication {
     public static void main(String[] args) {
         SpringApplication.run(JpaSpringBootApplication.class, args);
