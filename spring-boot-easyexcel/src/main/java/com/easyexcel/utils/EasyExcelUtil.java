@@ -6,6 +6,7 @@ import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.metadata.WriteTable;
 import com.alibaba.excel.write.metadata.WriteWorkbook;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.easyexcel.constants.ExcelConstants;
 import com.easyexcel.pojo.ActResultLogDO;
 import com.easyexcel.service.ActResultLogService;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,6 @@ public class EasyExcelUtil {
     private ActResultLogService actResultLogService;
 
     private static final Integer totalCount = 20000;
-
     /**
      * 导出逻辑代码
      */
@@ -64,6 +64,7 @@ public class EasyExcelUtil {
 //            Integer totalCount = 20000;
             // 每一个Sheet存放100w条数据
 //            Integer sheetDataRows = ExcelConstants.PER_SHEET_ROW_COUNT;
+
             Integer sheetDataRows = 200000;
             // 每次写入的数据量20w
 //            Integer writeDataRows = ExcelConstants.PER_WRITE_ROW_COUNT;
