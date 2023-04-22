@@ -50,10 +50,10 @@ public class UserUtil {
         // 登陆
         String urlString = "http://localhost:8099/login/toLogin";
         File file = new File("/Users/chengsukai/Desktop/workspace/study/config.txt");
-        if(file.exists()){
+        if (file.exists()) {
             file.delete();
         }
-        RandomAccessFile randomAccessFile = new RandomAccessFile(file,"rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
         randomAccessFile.seek(0);
         for (int i = 0; i < users.size(); i++) {
             TUser user = users.get(i);
@@ -69,9 +69,8 @@ public class UserUtil {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] buff = new byte[1024];
             int len = 0;
-            while(len = inputStream.read(buff) >= 0){
-
-                byteArrayOutputStream.write(buff,0,len);
+            while ((len = inputStream.read(buff)) >= 0) {
+                byteArrayOutputStream.write(buff, 0, len);
             }
         }
 
