@@ -1,14 +1,13 @@
 package com.jpa;
 
-import com.github.jeffreyning.mybatisplus.conf.EnableMPP;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
-@SpringBootApplication()
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class JpaSpringBootApplication {
     public static void main(String[] args) {
         SpringApplication.run(JpaSpringBootApplication.class, args);
