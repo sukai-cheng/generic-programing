@@ -13,7 +13,7 @@ import java.util.Date;
 @Component
 public class Task implements CommandLineRunner {
 
-    @DubboReference
+    @DubboReference(version = "1.0.0", group = "dev", timeout = 5000) // 获取RPC订阅
     private DemoApi demoApi;
 
     @Override

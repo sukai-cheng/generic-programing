@@ -18,8 +18,6 @@ public class DubboDemoWebApplication {
         File jarFile = home.getSource();
         String dirPath = jarFile.getParentFile().toString();
         String filePath = dirPath + File.separator + ".dubbo";
-        System.out.println(filePath);
-
         System.setProperty("dubbo.meta.cache.filePath", filePath);
         System.setProperty("dubbo.mapping.cache.filePath",filePath);
         SpringApplication.run(DubboDemoWebApplication.class, args);

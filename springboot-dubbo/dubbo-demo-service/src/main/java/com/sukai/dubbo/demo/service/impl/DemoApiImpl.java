@@ -6,7 +6,7 @@ import org.apache.dubbo.config.annotation.DubboService;
 /**
  * @author chengsukai
  */
-@DubboService
+@DubboService(version = "1.0.0", group = "dev", timeout = 5000) //发布dubbo服务
 public class DemoApiImpl implements DemoApi {
 
     @Override
