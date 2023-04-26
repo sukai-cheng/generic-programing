@@ -1,7 +1,9 @@
 dubbo:
-
   application:
     name: dubbo-demo-service
+    qosPort: 33333
+    qosEnable: true
+    qosAcceptForeignIp: false
   protocol:
     name: dubbo
     port: -1
