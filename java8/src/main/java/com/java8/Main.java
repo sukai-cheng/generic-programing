@@ -2,6 +2,9 @@ package com.java8;
 
 import org.openjdk.jol.info.ClassLayout;
 
+/**
+ * @author chengsukai
+ */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         OneClass oneClass = new OneClass();

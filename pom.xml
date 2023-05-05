@@ -21,6 +21,7 @@
         <module>spring-boot-easyexcel</module>
         <module>springboot-rabbitmq</module>
         <module>springboot-dubbo</module>
+        <module>student-management-system</module>
     </modules>
 
     <properties>
