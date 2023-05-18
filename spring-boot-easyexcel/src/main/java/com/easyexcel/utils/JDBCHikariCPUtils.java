@@ -23,9 +23,9 @@ public class JDBCHikariCPUtils {
 
     public void setConfig(Properties properties) {
         config = new HikariConfig();
-        config.setDriverClassName(properties.getProperty("driver"));
-        config.setUsername(properties.getProperty("user"));
-        config.setPassword(properties.getProperty("pass"));
+        config.setDriverClassName(properties.getProperty("driverClassName"));
+        config.setUsername(properties.getProperty("username"));
+        config.setPassword(properties.getProperty("password"));
         config.setJdbcUrl(properties.getProperty("url"));
         dataSource = new HikariDataSource(config);
     }
