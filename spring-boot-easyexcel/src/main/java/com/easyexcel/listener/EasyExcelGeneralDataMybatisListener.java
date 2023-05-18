@@ -11,6 +11,9 @@ import com.easyexcel.utils.StarBeanUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 自定义监听器进行数据的流转处理
+ */
 public class EasyExcelGeneralDataMybatisListener extends AnalysisEventListener<ActResultLogVO> {
     private ActResultLogService actResultLogService;
 
