@@ -38,3 +38,6 @@ logging:
     com.easyexcel.mapper: debug
 server:
   port: 8049
+easyexcel:
+  import:
+    path: /Users/chengsukai/Downloads/
