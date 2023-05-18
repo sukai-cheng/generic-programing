@@ -2,9 +2,11 @@ package com.java8.arrays;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Arrays.toList() 不能add
+ * @author chengsukai
  */
 public class Main {
     public static void main(String[] args) {

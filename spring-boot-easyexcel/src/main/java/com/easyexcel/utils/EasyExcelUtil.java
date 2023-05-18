@@ -6,9 +6,6 @@ import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.metadata.WriteTable;
 import com.alibaba.excel.write.metadata.WriteWorkbook;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
-import com.easyexcel.constants.ExcelConstants;
-import com.easyexcel.pojo.ActResultLogDO;
-import com.easyexcel.service.ActResultLogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

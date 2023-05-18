@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easyexcel.mapper.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.easyexcel.pojo.Student">
+    <!--@mbg.generated-->
+    <!--@Table student-->
+    <id column="stu_id" jdbcType="INTEGER" property="stuId" />
+    <result column="stu_name" jdbcType="VARCHAR" property="stuName" />
+    <result column="stu_password" jdbcType="VARCHAR" property="stuPassword" />
+    <result column="stu_gender" jdbcType="VARCHAR" property="stuGender" />
+    <result column="stu_address" jdbcType="VARCHAR" property="stuAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    stu_id, stu_name, stu_password, stu_gender, stu_address
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update student
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="stu_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when stu_id = #{item.stuId,jdbcType=INTEGER} then #{item.stuName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="stu_password = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when stu_id = #{item.stuId,jdbcType=INTEGER} then #{item.stuPassword,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="stu_gender = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when stu_id = #{item.stuId,jdbcType=INTEGER} then #{item.stuGender,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="stu_address = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when stu_id = #{item.stuId,jdbcType=INTEGER} then #{item.stuAddress,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where stu_id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.stuId,jdbcType=INTEGER}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="stu_id" keyProperty="stuId" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into student
+    (stu_name, stu_password, stu_gender, stu_address)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.stuName,jdbcType=VARCHAR}, #{item.stuPassword,jdbcType=VARCHAR}, #{item.stuGender,jdbcType=VARCHAR}, 
+        #{item.stuAddress,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+</mapper>

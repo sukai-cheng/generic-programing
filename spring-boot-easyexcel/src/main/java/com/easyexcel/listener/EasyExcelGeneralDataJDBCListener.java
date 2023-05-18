@@ -3,7 +3,6 @@ package com.easyexcel.listener;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.easyexcel.constants.ExcelConstants;
-import com.easyexcel.service.ActResultLogService;
 
 import java.util.ArrayList;
 import java.util.List;

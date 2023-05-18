@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.seckill.mapper.ScoreMapper">
+  <resultMap id="BaseResultMap" type="com.seckill.pojo.Score">
+    <!--@mbg.generated-->
+    <!--@Table score-->
+    <result column="cour_id" jdbcType="INTEGER" property="courId" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+    <result column="sco_score" jdbcType="VARCHAR" property="scoScore" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    cour_id, stu_id, sco_score
+  </sql>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into score
+    (cour_id, stu_id, sco_score)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.courId,jdbcType=INTEGER}, #{item.stuId,jdbcType=INTEGER}, #{item.scoScore,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+</mapper>
