@@ -3,6 +3,9 @@ package com.easyexcel.listener;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.easyexcel.constants.ExcelConstants;
+import com.easyexcel.pojo.ActResultLogDO;
+import com.easyexcel.pojo.ActResultLogVO;
+import com.easyexcel.service.ActResultLogService;
 import com.easyexcel.utils.StarBeanUtils;
 
 import java.util.ArrayList;
@@ -10,6 +13,7 @@ import java.util.List;
 
 /**
  * 自定义监听器进行数据的流转处理
+ * @author chengsukai
  */
 public class EasyExcelGeneralDataMybatisListener extends AnalysisEventListener<ActResultLogVO> {
     private ActResultLogService actResultLogService;

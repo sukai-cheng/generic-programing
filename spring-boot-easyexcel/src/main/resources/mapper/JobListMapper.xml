@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easyexcel.mapper.JobListMapper">
+  <resultMap id="BaseResultMap" type="com.easyexcel.pojo.JobList">
+    <!--@mbg.generated-->
+    <!--@Table job_list-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="main_dept" jdbcType="VARCHAR" property="mainDept" />
+    <result column="institution_name" jdbcType="VARCHAR" property="institutionName" />
+    <result column="unit_nature" jdbcType="VARCHAR" property="unitNature" />
+    <result column="position_category" jdbcType="VARCHAR" property="positionCategory" />
+    <result column="position_name" jdbcType="VARCHAR" property="positionName" />
+    <result column="position_code" jdbcType="VARCHAR" property="positionCode" />
+    <result column="recruiters_num" jdbcType="VARCHAR" property="recruitersNum" />
+    <result column="needMajor_name" jdbcType="VARCHAR" property="needmajorName" />
+    <result column="need_record" jdbcType="VARCHAR" property="needRecord" />
+    <result column="need_degree" jdbcType="VARCHAR" property="needDegree" />
+    <result column="need_other_condition" jdbcType="VARCHAR" property="needOtherCondition" />
+    <result column="written_type" jdbcType="VARCHAR" property="writtenType" />
+    <result column="mark" jdbcType="VARCHAR" property="mark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_num, main_dept, institution_name, unit_nature, position_category, position_name, 
+    position_code, recruiters_num, needMajor_name, need_record, need_degree, need_other_condition,
+    written_type, mark
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update job_list
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="order_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.orderNum,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="main_dept = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.mainDept,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="institution_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.institutionName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="unit_nature = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.unitNature,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="position_category = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.positionCategory,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="position_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.positionName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="position_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.positionCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="recruiters_num = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.recruitersNum,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="needMajor_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.needmajorName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="need_record = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.needRecord,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="need_degree = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.needDegree,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="needOther_condition = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.needOtherCondition,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="written_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.writtenType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="mark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.mark,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+      <!--@mbg.generated-->
+      insert into job_list
+      (order_num, main_dept, institution_name, unit_nature, position_category, position_name,
+       position_code, recruiters_num, needMajor_name, need_record, need_degree, need_other_condition,
+       written_type, mark)
+      values
+      <foreach collection="list" item="item" separator=",">
+          (#{item.orderNum,jdbcType=INTEGER}, #{item.mainDept,jdbcType=VARCHAR},
+           #{item.institutionName,jdbcType=VARCHAR},
+           #{item.unitNature,jdbcType=VARCHAR}, #{item.positionCategory,jdbcType=VARCHAR},
+           #{item.positionName,jdbcType=VARCHAR}, #{item.positionCode,jdbcType=VARCHAR},
+           #{item.recruitersNum,jdbcType=VARCHAR},
+           #{item.needmajorName,jdbcType=VARCHAR}, #{item.needRecord,jdbcType=VARCHAR},
+           #{item.needDegree,jdbcType=VARCHAR},
+           #{item.needOtherCondition,jdbcType=VARCHAR}, #{item.writtenType,jdbcType=VARCHAR},
+           #{item.mark,jdbcType=VARCHAR})
+      </foreach>
+  </insert>
+
+  <insert id="importToDb" parameterType="com.easyexcel.pojo.JobList">
+      insert into job_list
+      (order_num, main_dept, institution_name, unit_nature, position_category, position_name,
+       position_code, recruiters_num, needMajor_name, need_record, need_degree, need_other_condition,
+       written_type, mark)
+      values
+      <foreach collection="list" item="item" separator=",">
+          (#{item.orderNum,jdbcType=INTEGER}, #{item.mainDept,jdbcType=VARCHAR},
+           #{item.institutionName,jdbcType=VARCHAR},
+           #{item.unitNature,jdbcType=VARCHAR}, #{item.positionCategory,jdbcType=VARCHAR},
+           #{item.positionName,jdbcType=VARCHAR}, #{item.positionCode,jdbcType=VARCHAR},
+           #{item.recruitersNum,jdbcType=VARCHAR},
+           #{item.needmajorName,jdbcType=VARCHAR}, #{item.needRecord,jdbcType=VARCHAR},
+           #{item.needDegree,jdbcType=VARCHAR},
+           #{item.needOtherCondition,jdbcType=VARCHAR}, #{item.writtenType,jdbcType=VARCHAR},
+           #{item.mark,jdbcType=VARCHAR})
+      </foreach>
+  </insert>
+</mapper>

@@ -1,12 +1,19 @@
 package com.easyexcel.utils;
 
+import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.metadata.WriteTable;
 import com.alibaba.excel.write.metadata.WriteWorkbook;
+import com.alibaba.excel.write.metadata.style.WriteCellStyle;
+import com.alibaba.excel.write.metadata.style.WriteFont;
+import com.alibaba.excel.write.style.HorizontalCellStyleStrategy;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.easyexcel.pojo.ActResultLogDO;
+import com.easyexcel.service.ActResultLogService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -20,6 +27,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author chengsukai
+ */
 @Slf4j
 @Component
 public class EasyExcelUtil {
@@ -27,6 +37,174 @@ public class EasyExcelUtil {
     private ActResultLogService actResultLogService;
 
     private static final Integer totalCount = 20000;
+
+    /**
+     * 首行单元格
+     * @param workbook
+     * @param fontSize
+     * @return
+     */
+    public static CellStyle getColumnTopStyle(Workbook workbook, int fontSize) {
+        if (fontSize == 0) {
+            fontSize = 10;
+        }
+        // 设置字体
+        Font font = workbook.createFont();
+        //设置字体大小
+        font.setFontHeightInPoints((short) fontSize);
+        //字体加粗
+        font.setBold(true);
+        //设置字体名字
+        font.setFontName("宋体");
+        //设置样式;
+        CellStyle style = workbook.createCellStyle();
+        //左右居中
+        style.setAlignment(HorizontalAlignment.CENTER);
+        //垂直居中
+        style.setVerticalAlignment(VerticalAlignment.CENTER);
+        //设置边框
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        style.setBorderTop(BorderStyle.THIN);
+        //在样式用应用设置的字体;
+        style.setFont(font);
+        //设置自动换行;
+        style.setWrapText(false);
+        return style;
+    }
+
+    /**
+     *
+     * @param workbook
+     * @param fontSize
+     * @return
+     */
+    public static CellStyle getColumnSecondLineStyle(Workbook workbook, int fontSize) {
+        if (fontSize == 0) {
+            fontSize = 10;
+        }
+        Font font = workbook.createFont();
+        //设置字体大小
+        font.setFontHeightInPoints((short) fontSize);
+        //设置字体名字
+        font.setFontName("Arial");
+        //设置样式;
+        CellStyle style = workbook.createCellStyle();
+        //左右居中
+        style.setAlignment(HorizontalAlignment.CENTER);
+        //垂直居中
+        style.setVerticalAlignment(VerticalAlignment.CENTER);
+        //设置边框
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        style.setBorderTop(BorderStyle.THIN);
+        //在样式用应用设置的字体;
+        style.setFont(font);
+        //设置自动换行;
+        style.setWrapText(false);
+        return style;
+    }
+
+
+    /*
+     * 字段样式
+     */
+    public static CellStyle getColumnStyle(Workbook workbook) {
+        // 设置字体
+        Font font = workbook.createFont();
+        //设置字体大小
+        font.setFontHeightInPoints((short) 10);
+        //设置字体名字
+        font.setFontName("Arial");
+        //设置样式;
+        CellStyle style = workbook.createCellStyle();
+        //左右居中
+        style.setAlignment(HorizontalAlignment.CENTER);
+        //垂直居中
+        style.setVerticalAlignment(VerticalAlignment.CENTER);
+        //设置边框
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        style.setBorderTop(BorderStyle.THIN);
+        //在样式用应用设置的字体;
+        style.setFont(font);
+        //设置自动换行;
+        style.setWrapText(true);
+        return style;
+
+    }
+
+
+
+    /**
+     * 设置表头
+     * @param headTitle
+     * @return
+     */
+    private static List<List<String>> head(String headTitle){
+        List<List<String>> list = new ArrayList<>();
+        List<String> firstCell = new ArrayList<>();
+        firstCell.add(headTitle);
+        firstCell.add("序号");
+        List<String> secondCell = new ArrayList<>();
+        secondCell.add(headTitle);
+        secondCell.add("主管部门(区、县、开发区)");
+        List<String> marchCell = new ArrayList<>();
+        marchCell.add(headTitle);
+        marchCell.add("单位性质/经费形式");
+        List<String> forthCell = new ArrayList<>();
+        forthCell.add(headTitle);
+        forthCell.add("岗位类别");
+        List<String> fifthCell = new ArrayList<>();
+        fifthCell.add(headTitle);
+        fifthCell.add("岗位简称");
+        List<String> sixthCell = new ArrayList<>();
+        sixthCell.add(headTitle);
+        sixthCell.add("岗位代码");
+        List<String> seventhCell = new ArrayList<>();
+        seventhCell.add(headTitle);
+        seventhCell.add("招聘人数");
+        List<String> neightCell = new ArrayList<>();
+        neightCell.add(headTitle);
+        neightCell.add("招聘岗位所需资格条件");
+        neightCell.add("专业名称");
+        List<String> ninthCell = new ArrayList<>();
+        ninthCell.add(headTitle);
+        ninthCell.add("招聘岗位所需资格条件");
+        ninthCell.add("学历");
+        List<String> tenthCell = new ArrayList<>();
+        tenthCell.add(headTitle);
+        tenthCell.add("招聘岗位所需资格条件");
+        tenthCell.add("学位");
+        List<String> eleventhCell = new ArrayList<>();
+        eleventhCell.add(headTitle);
+        eleventhCell.add("招聘岗位所需资格条件");
+        eleventhCell.add("其他条件");
+        List<String> twelfthCell = new ArrayList<>();
+        twelfthCell.add(headTitle);
+        twelfthCell.add("笔试类别");
+        List<String> thirteenthCell = new ArrayList<>();
+        thirteenthCell.add(headTitle);
+        thirteenthCell.add("备注");
+
+        list.add(firstCell);
+        list.add(secondCell);
+        list.add(marchCell);
+        list.add(forthCell);
+        list.add(fifthCell);
+        list.add(sixthCell);
+        list.add(seventhCell);
+        list.add(neightCell);
+        list.add(ninthCell);
+        list.add(tenthCell);
+        list.add(eleventhCell);
+        list.add(twelfthCell);
+        list.add(thirteenthCell);
+        return list;
+    }
     /**
      * 导出逻辑代码
      */
@@ -36,24 +214,38 @@ public class EasyExcelUtil {
             long startTime = System.currentTimeMillis();
             log.info("导出开始时间:{}", startTime);
             outputStream = response.getOutputStream();
+
             WriteWorkbook writeWorkbook = new WriteWorkbook();
             writeWorkbook.setOutputStream(outputStream);
             writeWorkbook.setExcelType(ExcelTypeEnum.XLSX);
             ExcelWriter writer = new ExcelWriter(writeWorkbook);
             String fileName = new String(("export-excel").getBytes(), StandardCharsets.UTF_8);
-            // TODO WriteTable 标题这块可以作为公共的封装起来，基于反射获取属性名称
+
             WriteTable table = new WriteTable();
-            List<List<String>> titles = new ArrayList<List<String>>();
-            titles.add(Collections.singletonList("onlineseqid"));
-            titles.add(Collections.singletonList("businessid"));
-            titles.add(Collections.singletonList("becifno"));
-            titles.add(Collections.singletonList("ivisresult"));
-            titles.add(Collections.singletonList("createdby"));
-            titles.add(Collections.singletonList("createddate"));
-            titles.add(Collections.singletonList("updateby"));
-            titles.add(Collections.singletonList("updateddate"));
-            titles.add(Collections.singletonList("risklevel"));
-            table.setHead(titles);
+            table.setHead(head("2022年下半年西安市事业单位公开招聘工作人员岗位表"));
+
+            //内容样式策略
+            WriteCellStyle contentWriteCellStyle = new WriteCellStyle();
+            //垂直居中,水平居中
+            contentWriteCellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+            contentWriteCellStyle.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            contentWriteCellStyle.setBorderLeft(BorderStyle.THIN);
+            contentWriteCellStyle.setBorderTop(BorderStyle.THIN);
+            contentWriteCellStyle.setBorderRight(BorderStyle.THIN);
+            contentWriteCellStyle.setBorderBottom(BorderStyle.THIN);
+            //设置 自动换行
+            contentWriteCellStyle.setWrapped(true);
+            // 字体策略
+            WriteFont contentWriteFont = new WriteFont();
+            // 字体大小，加粗，字体类型
+            contentWriteFont.setFontName("宋体");
+            contentWriteFont.setFontHeightInPoints((short) 10);
+            contentWriteCellStyle.setWriteFont(contentWriteFont);
+            //头部样式策略
+            WriteCellStyle headWriteCellStyle = new WriteCellStyle();
+            headWriteCellStyle.setWriteFont(contentWriteFont);
+
+//            table.setCustomWriteHandlerList();
             // 记录总数：实际中需要根据查询条件（过滤数据）进行统计即可，
             // TODO 此处写入限定的条数进行自测
 //            Integer totalCount = actResultLogService.count();
