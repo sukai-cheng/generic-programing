@@ -22,7 +22,11 @@
         <module>springboot-rabbitmq</module>
         <module>springboot-dubbo</module>
         <module>springboot-satoken</module>
+        <module>springboot-demo</module>
+        <module>study-project-backend</module>
         <module>spring-boot-utils</module>
+        <module>spring-boot-redis</module>
+        <module>java-algorithm</module>
     </modules>
 
     <properties>

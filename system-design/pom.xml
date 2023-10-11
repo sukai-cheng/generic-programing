@@ -8,7 +8,7 @@
     </parent>
     <artifactId>system-design</artifactId>
     <packaging>war</packaging>
-    <name>system-design Maven Webapp</name>
+    <name>system-design</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

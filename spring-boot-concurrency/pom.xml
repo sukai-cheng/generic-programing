@@ -8,7 +8,7 @@
     </parent>
     <artifactId>spring-boot-concurrency</artifactId>
     <packaging>pom</packaging>
-    <name>spring-boot-concurrency Maven Webapp</name>
+    <name>spring-boot-concurrency</name>
     <url>https://maven.apache.org</url>
     <modules>
         <module>kill-system</module>

@@ -8,7 +8,7 @@
     </parent>
     <artifactId>spring-boot-jpa</artifactId>
     <packaging>war</packaging>
-    <name>spring-boot-jpa Maven Webapp</name>
+    <name>spring-boot-jpa</name>
     <url>https://maven.apache.org</url>
     <dependencies>
         <dependency>

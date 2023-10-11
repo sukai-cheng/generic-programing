@@ -8,7 +8,7 @@
     </parent>
     <artifactId>concurrency-basic</artifactId>
     <packaging>war</packaging>
-    <name>concurrency-basic Maven Webapp</name>
+    <name>concurrency-basic</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

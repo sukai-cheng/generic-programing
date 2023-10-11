@@ -8,7 +8,7 @@
     </parent>
     <artifactId>spring-boot-mybatis-plus</artifactId>
     <packaging>war</packaging>
-    <name>spring-boot-mybatis-plus Maven Webapp</name>
+    <name>spring-boot-mybatis-plus</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

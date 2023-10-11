@@ -8,7 +8,7 @@
     </parent>
     <artifactId>kill-system</artifactId>
     <packaging>jar</packaging>
-    <name>kill-system Maven Webapp</name>
+    <name>kill-system</name>
     <url>https://maven.apache.org</url>
     <dependencies>
         <dependency>

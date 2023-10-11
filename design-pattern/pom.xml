@@ -8,7 +8,7 @@
     </parent>
     <artifactId>design-pattern</artifactId>
     <packaging>war</packaging>
-    <name>design-pattern Maven Webapp</name>
+    <name>design-pattern </name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>

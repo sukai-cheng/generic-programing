@@ -8,7 +8,7 @@
     </parent>
     <artifactId>spring-boot-utils</artifactId>
     <packaging>war</packaging>
-    <name>spring-boot-utils Maven Webapp</name>
+    <name>spring-boot-utils </name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pagehelper.starter.version>1.4.1</pagehelper.starter.version>
