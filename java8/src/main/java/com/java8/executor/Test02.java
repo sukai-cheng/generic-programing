@@ -19,31 +19,43 @@ public class Test02 {
         for (Future<String> future : futures) {
             try {
                 log.info("result,{}", executorCompletionService.take().get());
-                break;
             } catch (Exception e) {
                 log.error("get error: ", e);
-            }finally {
-                future.cancel(true);
             }
         }
     }
 
     private void addCompletionFuture(List<Future<String>> futures, CompletionService<String> executorCompletionService) {
-        futures.add(executorCompletionService.submit(() -> {
+        List<Callable<String>> taskList = mockTaskList();
+        submitTask(futures, executorCompletionService, taskList);
+    }
+
+    private List<Callable<String>> mockTaskList() {
+        List<Callable<String>> taskList = new ArrayList<>();
+        taskList.add(() -> {
             TimeUnit.SECONDS.sleep(10);
             return "A";
-        }));
-        futures.add(executorCompletionService.submit(() -> {
+        });
+        taskList.add(() -> {
             TimeUnit.SECONDS.sleep(2);
             return "B";
-        }));
-        futures.add(executorCompletionService.submit(() -> {
+        });
+        taskList.add(() -> {
             TimeUnit.SECONDS.sleep(3);
             return "C";
-        }));
-        futures.add(executorCompletionService.submit(() -> {
+        });
+        taskList.add(() -> {
             TimeUnit.SECONDS.sleep(4);
             return "D";
-        }));
+        });
+
+        return taskList;
+    }
+
+    private void submitTask(List<Future<String>> futures, CompletionService<String> completionService, List<Callable<String>> taskList) {
+
+        for (Callable<String> task : taskList) {
+            futures.add(completionService.submit(task));
+        }
     }
 }
