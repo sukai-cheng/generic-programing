@@ -11,9 +11,9 @@ public class ClassDemo {
     public static void main(String[] args) throws ParseException {
         Date date = new Date(1676044800000L);
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        sdf.setTimeZone(TimeZone.getDefault());
         String dateStr2 = sdf.format(date);
         System.out.println(dateStr2);
+
     }
 }
 

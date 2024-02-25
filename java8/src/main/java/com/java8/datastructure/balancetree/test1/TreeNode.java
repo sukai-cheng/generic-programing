@@ -25,7 +25,6 @@ public class TreeNode {
      * 因为节点之间有互相引用关系，如果全部打印会导致堆栈溢出
      * 故此处值打印父节点和左右子节点的值
      *
-     * @return
      */
     @Override
     public String toString() {
@@ -51,8 +50,6 @@ public class TreeNode {
 
     /**
      * 因为平衡二叉树的节点值唯一，所以此处只需要比较值相等
-     * @param o
-     * @return
      */
     @Override
     public boolean equals(Object o) {
