@@ -27,6 +27,8 @@
         <module>spring-boot-utils</module>
         <module>spring-boot-redis</module>
         <module>java-algorithm</module>
+        <module>spring-boot-hibernate</module>
+        <module>spring-boot-websocket</module>
     </modules>
 
     <properties>
