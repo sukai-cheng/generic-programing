@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>rbac</module>
         <module>java8</module>
         <module>spring-boot-guava</module>
         <module>spring-boot-mybatis-plus</module>
@@ -23,7 +22,6 @@
         <module>springboot-dubbo</module>
         <module>springboot-satoken</module>
         <module>springboot-demo</module>
-        <module>study-project-backend</module>
         <module>spring-boot-utils</module>
         <module>spring-boot-redis</module>
         <module>java-algorithm</module>
