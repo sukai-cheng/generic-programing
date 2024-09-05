@@ -27,6 +27,7 @@
         <module>java-algorithm</module>
         <module>spring-boot-hibernate</module>
         <module>spring-boot-websocket</module>
+        <module>mybatis-step-01</module>
     </modules>
 
     <properties>
