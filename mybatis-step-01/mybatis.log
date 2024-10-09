@@ -1,0 +1,12 @@
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！null
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！null
+DEBUG main reactor.util.Loggers - Using Slf4j logging framework
+DEBUG main reactor.core.publisher.Hooks - Enabling stacktrace debugging via onOperatorDebug
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！null
+DEBUG main reactor.util.Loggers - Using Slf4j logging framework
+DEBUG main reactor.core.publisher.Hooks - Enabling stacktrace debugging via onOperatorDebug
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！null
+DEBUG main reactor.util.Loggers - Using Slf4j logging framework
+DEBUG main reactor.core.publisher.Hooks - Enabling stacktrace debugging via onOperatorDebug
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！null
+INFO main com.sukai.mybatis.test.ApiTest - 测试结果: 你的被代理了！模拟执行 Mapper.xml 中 SQL 语句的操作：查询用户姓名

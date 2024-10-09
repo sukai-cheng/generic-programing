@@ -1,8 +1,9 @@
 package com.sukai.mybatis.binding;
 
-import org.apache.ibatis.session.SqlSession;
+
 
 import java.lang.reflect.Proxy;
+import java.util.Map;
 
 public class MapperProxyFactory<T> {
 
@@ -12,9 +13,8 @@ public class MapperProxyFactory<T> {
         this.mapperInterface = mapperInterface;
     }
 
-    @SuppressWarnings("unchecked")
-    public T newInstance(SqlSession sqlSession) {
-        final MapperProxy<T> mapperProxy = new MapperProxy<>(sqlSession, mapperInterface);
-        Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[]{mapperInterface}, mapperProxy);
+    public T newInstance(Map<String, String> sqlSession) {
+        final MapperProxy<T> mapperProxy = new MapperProxy<>(mapperInterface, sqlSession);
+        return (T) Proxy.newProxyInstance(mapperInterface.getClassLoader(), new Class[]{mapperInterface}, mapperProxy);
     }
 }
