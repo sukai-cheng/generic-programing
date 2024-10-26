@@ -3,7 +3,7 @@ package com.java8.bigdecimal;
 import java.math.BigDecimal;
 
 /**
- * 为了避免在bigdecimal中的精度问题, 统一传字符串格式的数据
+ * 为了避免在bigDecimal中的精度问题, 统一传字符串格式的数据
  */
 public class test01 {
     public static void main(String[] args) {

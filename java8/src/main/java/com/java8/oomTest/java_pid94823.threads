@@ -1,0 +1,73 @@
+Thread 0x7ff27abc8
+
+  locals:
+
+Thread 0x7ff27aa58
+  at java.lang.OutOfMemoryError.<init>()V (OutOfMemoryError.java:48)
+  at com.java8.oomTest.OOMTest.main([Ljava/lang/String;)V (OOMTest.java:11)
+
+  locals:
+    objectId=0x7ff27a208, line=1
+    objectId=0x7ff27a218, line=1
+
+Thread 0x7ff27a428
+  at java.net.InetSocketAddress.<init>(Ljava/lang/String;I)V (InetSocketAddress.java:233)
+  at java.net.Socket.<init>(Ljava/lang/String;I)V (Socket.java:287)
+  at com.intellij.rt.execution.application.AppMainV2$1.run()V (AppMainV2.java:52)
+
+  locals:
+    objectId=0x7ff27a650, line=0
+    objectId=0x7ff27a638, line=0
+    objectId=0x7ffd00568, line=0
+    objectId=0x7ff27a650, line=0
+    objectId=0x7ffd00648, line=0
+    objectId=0x7ffd00648, line=0
+    objectId=0x7ffd00568, line=0
+    objectId=0x7ff27a6e0, line=1
+    objectId=0x7ff27a638, line=1
+    objectId=0x7ff27a6e0, line=1
+    objectId=0x7ff27a650, line=1
+    objectId=0x7ff27a428, line=2
+    objectId=0x7ff27a6e0, line=2
+
+Thread 0x7ff26a708
+  at java.lang.Object.wait(J)V (Object.java(Native Method))
+  at java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (ReferenceQueue.java:155)
+  at java.lang.ref.ReferenceQueue.remove()Ljava/lang/ref/Reference; (ReferenceQueue.java:176)
+  at java.lang.ref.Finalizer$FinalizerThread.run()V (Finalizer.java:172)
+
+  locals:
+    objectId=0x7ff26a890, line=1
+    objectId=0x7ff26a880, line=1
+    objectId=0x7ff26a890, line=2
+    objectId=0x7ff26a708, line=3
+    objectId=0x7ff26a8b0, line=3
+
+Thread 0x7ff26a8c0
+  at java.lang.Object.wait(J)V (Object.java(Native Method))
+  at java.lang.ref.ReferenceQueue.remove(J)Ljava/lang/ref/Reference; (ReferenceQueue.java:155)
+  at jdk.internal.ref.CleanerImpl.run()V (CleanerImpl.java:140)
+  at java.lang.Thread.run()V (Thread.java:840)
+  at jdk.internal.misc.InnocuousThread.run()V (InnocuousThread.java:162)
+
+  locals:
+    objectId=0x7ff27b628, line=1
+    objectId=0x7ff27b648, line=1
+    objectId=0x7ff26aa38, line=2
+    objectId=0x7ff26a8c0, line=2
+    objectId=0x7ff26a8c0, line=2
+    objectId=0x7ff26a8c0, line=3
+    objectId=0x7ff26a8c0, line=4
+
+Thread 0x7ff26a598
+  at java.lang.ref.Reference.waitForReferencePendingList()V (Reference.java(Native Method))
+  at java.lang.ref.Reference.processPendingReferences()V (Reference.java:253)
+  at java.lang.ref.Reference$ReferenceHandler.run()V (Reference.java:215)
+
+  locals:
+    objectId=0x7ff26a598, line=2
+
+Thread 0x7ff27b2f8
+
+  locals:
+
