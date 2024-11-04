@@ -69,7 +69,7 @@ public class DifferentSingleton {
      * bad: 初始化就装载了,没有懒加载,无法防止反序列化重新创建新的对象
      */
     static class UnsafeSingleton3 implements Serializable {
-        private static UnsafeSingleton3 instance = new UnsafeSingleton3();
+        private static final UnsafeSingleton3 instance = new UnsafeSingleton3();
         private UnsafeSingleton3() {}
 
         public static UnsafeSingleton3 getInstance() {
